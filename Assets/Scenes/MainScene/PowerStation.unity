@@ -443,7 +443,7 @@ MonoBehaviour:
   defaultCursor: {fileID: 2800000, guid: b5028c65df0edee45be6fd581b1ebcd3, type: 3}
   card: {fileID: 105648562}
   cityEvent: {fileID: 0}
-  electricity: 0
+  electricity: 15
   cardName: Fire
   cardDescription: Kill everyone
   cursorPointer: {fileID: 2800000, guid: 00a268f6cea1c5241924324f64237afa, type: 3}
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   defaultCursor: {fileID: 2800000, guid: b5028c65df0edee45be6fd581b1ebcd3, type: 3}
   card: {fileID: 873431151}
   cityEvent: {fileID: 0}
-  electricity: 0
+  electricity: 10
   cardName: Fire
   cardDescription: Kill everyone
   cursorPointer: {fileID: 2800000, guid: 00a268f6cea1c5241924324f64237afa, type: 3}
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   defaultCursor: {fileID: 2800000, guid: b5028c65df0edee45be6fd581b1ebcd3, type: 3}
   card: {fileID: 1058551108}
   cityEvent: {fileID: 0}
-  electricity: 0
+  electricity: 5
   cardName: Fire
   cardDescription: Kill everyone
   cursorPointer: {fileID: 2800000, guid: 00a268f6cea1c5241924324f64237afa, type: 3}
@@ -1467,6 +1467,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129015363}
   m_CullTransparentMesh: 1
+--- !u!1 &1194749084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1194749086}
+  - component: {fileID: 1194749085}
+  m_Layer: 0
+  m_Name: StateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1194749085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194749084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79713307f8158814aba632446c26369b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyAmount: 0
+--- !u!4 &1194749086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194749084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1186.6321, y: 679.81464, z: -4.69294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370842558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +1837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   to: {fileID: 36740499}
   from: {fileID: 2010961458}
+  addCardValue: 1
 --- !u!114 &1666611243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,6 +2414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   to: {fileID: 2010961458}
   from: {fileID: 36740499}
+  addCardValue: 0
 --- !u!114 &2062177299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,3 +2552,4 @@ SceneRoots:
   - {fileID: 1370842561}
   - {fileID: 130167270}
   - {fileID: 1679219380}
+  - {fileID: 1194749086}

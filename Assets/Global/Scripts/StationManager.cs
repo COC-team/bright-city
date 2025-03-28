@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StationManager  : MonoBehaviour
@@ -19,10 +20,11 @@ public class StationManager  : MonoBehaviour
             return;
         }
     }
-    
+
     public void AddEnergy(int amount)
     {
         energyAmount += amount;
+        Debug.Log($"Current station energy {energyAmount}!");
     }
     
     public void RemoveEnergy(int amount)
@@ -32,6 +34,7 @@ public class StationManager  : MonoBehaviour
         {
             energyAmount = 0;
         }
+        Debug.Log($"Current station energy {energyAmount}!");
     }
     
     public void ResetEnergy()

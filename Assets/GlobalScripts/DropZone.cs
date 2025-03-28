@@ -5,6 +5,7 @@ public class DropZone : MonoBehaviour
 {
     public DynamicList to;
     public DynamicList from;
+    public bool addCardValue;
     
     public bool OnDrop(Card card)
     {
@@ -20,6 +21,16 @@ public class DropZone : MonoBehaviour
             to.AddItem(card);
             from.RemoveItem(card);
             card.transform.position = transform.position;
+
+            if (addCardValue)
+            {
+                StationManager.Instance.AddEnergy(card.electricity);
+            }
+            else
+            {
+                StationManager.Instance.RemoveEnergy(card.electricity);
+            }
+            
             return true;
         }
 
