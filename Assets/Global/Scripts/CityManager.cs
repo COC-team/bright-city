@@ -1,13 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class CityManager : MonoBehaviour
 {
     public int cityPopulation;
     public int maxCityDaysAmount;
     
+    public TextMeshProUGUI dayCounterText;
+    public TextMeshProUGUI finalMessage;
+    public NewsManager newsManager;
+
+    private bool isGameOver = false;
     private City city;
     private Dictionary<int, List<Event>> eventsByDay;
+
 
     private void Awake()
     {
@@ -47,6 +54,11 @@ public class CityManager : MonoBehaviour
 
     private void Update()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+        
         // Simulate a day passing when pressing the space bar
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -57,15 +69,14 @@ public class CityManager : MonoBehaviour
     public void SwitchNextDay()
     {
         city.SwitchNextDay();
+        UpdateDayCounterUI();
         
         if (eventsByDay.ContainsKey(city.currentDay))
         {
             Debug.Log($"Day {city.currentDay}: Events Occurring");
-            foreach (var gameEvent in eventsByDay[city.currentDay])
-            {
-                Debug.Log($"Event: {gameEvent.description}, Type: {gameEvent.type}");
-                city.ApplyEvent(gameEvent);
-            }
+            var events = eventsByDay[city.currentDay];
+            city.ApplyEvents(events);
+            newsManager.ShowNews(events);
         }
         else
         {
@@ -88,6 +99,8 @@ public class CityManager : MonoBehaviour
     public void WinGame()
     {
         Debug.Log("You win!");
+        isGameOver = true;
+        UpdateFinalMessageUI("You win!!!!");
     }
     
     private void LogAllLocations()
@@ -95,6 +108,22 @@ public class CityManager : MonoBehaviour
         foreach (var location in city.locations)
         {
             Debug.Log($"Location: {location.type}, Base Energy: {location.baseEnergyAmount}, Current Day Energy: {location.currentDayEnergyAmount}");
+        }
+    }
+    
+    private void UpdateDayCounterUI()
+    {
+        if (dayCounterText != null)
+        {
+            dayCounterText.text = "Day: " + city.currentDay;  // Update text here
+        }
+    }
+    
+    private void UpdateFinalMessageUI(string message)
+    {
+        if (finalMessage != null)
+        {
+            finalMessage.text = message;  // Update text here
         }
     }
 }

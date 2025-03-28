@@ -19,22 +19,26 @@ public class City
         return currentDay > maxDaysAmount;
     }
     
-    public void ApplyEvent(Event eventToApply)
+    public void ApplyEvents(List<Event> eventsToApply)
     {
-        if (eventToApply.type == EventType.WHOLE_CITY)
+        foreach (var eventToApply in eventsToApply)
         {
-            foreach (Location location in locations)
+            Debug.Log($"Event: {eventToApply.description}, Type: {eventToApply.type}");
+            if (eventToApply.type == EventType.WHOLE_CITY)
             {
-                location.applyEnergyModifier(eventToApply.GetEnergyModifier(location.type));
-            }
-        }
-        else if (eventToApply.type == EventType.SOME_LOCATIONS)
-        {
-            foreach (var location in locations)
-            {
-                if (eventToApply.locationsEnergyModifier.ContainsKey(location.type))
+                foreach (Location location in locations)
                 {
-                    location.applyEnergyModifier(eventToApply.GetEnergyModifier(location.type));
+                    location.ApplyEnergyModifier(eventToApply.GetEnergyModifier(location.type));
+                }
+            }
+            else if (eventToApply.type == EventType.SOME_LOCATIONS)
+            {
+                foreach (var location in locations)
+                {
+                    if (eventToApply.locationsEnergyModifier.ContainsKey(location.type))
+                    {
+                        location.ApplyEnergyModifier(eventToApply.GetEnergyModifier(location.type));
+                    }
                 }
             }
         }
