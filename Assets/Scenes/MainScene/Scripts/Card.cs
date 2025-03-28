@@ -8,6 +8,7 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
 {
     public GameObject card;
     public GameObject cityEvent;
+    public int electricity;
     public string cardName;
     public string cardDescription;
     private Vector3 startPosition;
