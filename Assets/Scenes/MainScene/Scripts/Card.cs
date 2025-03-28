@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -63,6 +64,32 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        base.OnPointerExit(null);
+        var dropZone = GetDropZoneUnderMouse();
+        if (dropZone != null)
+        {
+            if (dropZone.GetComponent<DropZone>().OnDrop(this))
+                return;
+        }
         card.transform.position = startPosition;
+    }
+    
+    private GameObject GetDropZoneUnderMouse()
+    {
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, results);
+
+        foreach (RaycastResult result in results)
+        {
+            if (result.gameObject.layer == LayerMask.NameToLayer("DropZone"))
+            {
+                return result.gameObject;
+            }
+        }
+
+        return null;
     }
 }

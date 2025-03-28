@@ -8,22 +8,24 @@ public class DynamicList : MonoBehaviour
     public Transform contentPanel; // Assign Panel (with Vertical Layout Group)
     private List<Card> items = new List<Card>();
 
+    void Start()
+    {
+        Card[] cards =  contentPanel.GetComponentsInChildren<Card>();
+        foreach (var card in cards)
+        {
+            AddItem(card);
+        }
+    }
     public void AddItem(Card newCard)
     {
-        // GameObject newItem = Instantiate(itemPrefab, contentPanel);
-        // newItem.GetComponentInChildren<Text>().text = text; // Set text if using UI
         items.Add(newCard);
         newCard.transform.SetParent(contentPanel);
     }
+    
 
-    public void RemoveLastItem()
+    public bool Contains(Card card)
     {
-        if (items.Count > 0)
-        {
-            Card lastItem = items[-1];
-            items.Remove(lastItem);
-            Destroy(lastItem);
-        }
+        return items.Contains(card);
     }
 
     public void RemoveItem(Card item)
@@ -31,7 +33,6 @@ public class DynamicList : MonoBehaviour
         if (items.Contains(item))
         {
             items.Remove(item);
-            Destroy(item);
         }
     }
 }

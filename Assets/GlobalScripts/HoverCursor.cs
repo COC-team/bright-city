@@ -13,6 +13,7 @@ public class HoverCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("PointerExit");
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
     }
 }
