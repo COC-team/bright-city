@@ -7,22 +7,23 @@ public class PopupController : MonoBehaviour
     public GameObject popupPanel; // Drag & Drop в инспекторе
     public Button closeButton;
 
-    public string text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        SetText(text);
+        ClosePopup();
         closeButton.onClick.AddListener(ClosePopup);
     }
 
-    public void ShowPopup()
+    public void ShowPopup(string text)
     {
         popupPanel.SetActive(true);
+        SetText(text);
     }
 
     private void ClosePopup()
     {
         popupPanel.SetActive(false);
+        SetText(string.Empty);
     }
 
     private void SetText(string text)
