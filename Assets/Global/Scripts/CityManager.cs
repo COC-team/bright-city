@@ -34,13 +34,7 @@ public class CityManager : MonoBehaviour
         city = new City();
         city.population = cityPopulation;
         city.maxDaysAmount = maxCityDaysAmount;
-        city.locations = new List<Location>
-        {
-            new Location(LocationType.Hospital, 50),
-            new Location(LocationType.School, 20),
-            new Location(LocationType.Supermarket, 30),
-            new Location(LocationType.Factory, 100),
-        };
+        city.locations = new List<Location>(FindObjectsByType<Location>(FindObjectsSortMode.None));
         
         eventsByDay = new Dictionary<int, List<Event>>();
         // Initialize some events
