@@ -2460,7 +2460,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 2124149086}
   closeButton: {fileID: 291175309}
-  text: Congratulations, bro!
 --- !u!114 &2124149089
 MonoBehaviour:
   m_ObjectHideFlags: 0

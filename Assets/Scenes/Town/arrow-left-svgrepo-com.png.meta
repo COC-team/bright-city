@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arrow-left-svgrepo-com_0: 2369680128734150249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
-  sceneToLoad: NextScene
+  sceneToLoad: PowerStation
 --- !u!60 &533146089
 PolygonCollider2D:
   m_ObjectHideFlags: 0
