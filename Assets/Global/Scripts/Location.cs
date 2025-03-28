@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class Location
+public class Location : MonoBehaviour
 {
     public LocationType type;
     public int baseEnergyAmount;
     public int currentDayEnergyAmount;
+    public bool enabled = false;
     
     public Location(LocationType type, int baseEnergyAmount = 0)
     {
@@ -22,18 +23,23 @@ public class Location
     {
         currentDayEnergyAmount = baseEnergyAmount;
     }
+    
+    public void EnableLocation()
+    {
+        enabled = true;
+    }
 }
 
 public enum LocationType
 {
-    HOSPITAL,
-    SCHOOL,
-    SUPERMARKET,
-    CINEMA,
-    CLUB,
-    FACTORY,
-    UNIVERSITY,
-    CASINO,
-    PARK,
-    FARM,
+    Hospital,
+    School,
+    Supermarket,
+    Cinema,
+    Club,
+    Factory,
+    University,
+    Casino,
+    Park,
+    Farm,
 }

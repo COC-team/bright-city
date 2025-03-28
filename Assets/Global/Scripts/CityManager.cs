@@ -34,13 +34,7 @@ public class CityManager : MonoBehaviour
         city = new City();
         city.population = cityPopulation;
         city.maxDaysAmount = maxCityDaysAmount;
-        city.locations = new List<Location>
-        {
-            new Location(LocationType.HOSPITAL, 50),
-            new Location(LocationType.SCHOOL, 20),
-            new Location(LocationType.SUPERMARKET, 30),
-            new Location(LocationType.FACTORY, 100),
-        };
+        city.locations = new List<Location>(FindObjectsByType<Location>(FindObjectsSortMode.None));
         
         eventsByDay = new Dictionary<int, List<Event>>();
         // Initialize some events
@@ -49,14 +43,14 @@ public class CityManager : MonoBehaviour
         Event earthquake = new Event(EventType.SOME_LOCATIONS, "Earthquake hits the city!");
         earthquake.locationsEnergyModifier = new Dictionary<LocationType, int>
         {
-            { LocationType.FACTORY, -50 },
-            { LocationType.HOSPITAL, -30 }
+            { LocationType.Factory, -50 },
+            { LocationType.Hospital, -30 }
         };
 
         Event protest = new Event(EventType.SOME_LOCATIONS, "Protest at the School.");
         protest.locationsEnergyModifier = new Dictionary<LocationType, int>
         {
-            { LocationType.SCHOOL, 20 }
+            { LocationType.School, 20 }
         };
 
         // Adding events to specific days
@@ -91,6 +85,11 @@ public class CityManager : MonoBehaviour
         Debug.Log("You lose!");
         isGameOver = true;
         UpdateFinalMessageUI("You lose!!!!");
+    }
+    
+    public void AddLocation(Location location)
+    {
+        city.locations.Add(location);
     }
 
     private void FinishDay()
