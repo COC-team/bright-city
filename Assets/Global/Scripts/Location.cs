@@ -13,7 +13,7 @@ public class Location
         currentDayEnergyAmount = baseEnergyAmount;
     }
     
-    public void applyEnergyModifier(int energyModifier)
+    public void ApplyEnergyModifier(int energyModifier)
     {
         currentDayEnergyAmount += energyModifier;
     }
