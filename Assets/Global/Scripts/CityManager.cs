@@ -1,23 +1,36 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
 public class CityManager : MonoBehaviour
 {
+    public static CityManager Instance { get; private set; }  // Singleton Instance
+
     public int cityPopulation;
     public int maxCityDaysAmount;
     
     public TextMeshProUGUI dayCounterText;
     public TextMeshProUGUI finalMessage;
-    public NewsManager newsManager;
 
     private bool isGameOver = false;
     private City city;
     private Dictionary<int, List<Event>> eventsByDay;
-
+    private int previousDayEnergyDifference = 0;
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);  // Ensures the CityManager persists across scenes
+        }
+        else
+        {
+            Destroy(gameObject);  // Destroy duplicate instances of the CityManager
+            return;
+        }
+        
         city = new City();
         city.population = cityPopulation;
         city.maxDaysAmount = maxCityDaysAmount;
@@ -62,10 +75,48 @@ public class CityManager : MonoBehaviour
         // Simulate a day passing when pressing the space bar
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SwitchNextDay();
+            FinishDay();
         }
     }
+    
+    public void WinGame()
+    {
+        Debug.Log("You win!");
+        isGameOver = true;
+        UpdateFinalMessageUI("You win!!!!");
+    }
+    
+    public void LooseGame()
+    {
+        Debug.Log("You lose!");
+        isGameOver = true;
+        UpdateFinalMessageUI("You lose!!!!");
+    }
 
+    private void FinishDay()
+    {
+        int actualEnergy = StationManager.Instance.energyAmount;
+        int neededEnergy = 0;
+        foreach (var location in city.locations)
+        {
+            neededEnergy += location.currentDayEnergyAmount;
+        }
+        
+        previousDayEnergyDifference = Math.Abs(actualEnergy - neededEnergy);
+        if (previousDayEnergyDifference != 0)
+        {
+            city.population -= previousDayEnergyDifference;
+        }
+        
+        if (city.population <= 0)
+        {
+            LooseGame();
+            return;
+        }
+
+        SwitchNextDay();
+    }
+    
     public void SwitchNextDay()
     {
         city.SwitchNextDay();
@@ -75,12 +126,12 @@ public class CityManager : MonoBehaviour
         {
             Debug.Log($"Day {city.currentDay}: Events Occurring");
             var events = eventsByDay[city.currentDay];
+            NewsManager.Instance.ShowNews(events, previousDayEnergyDifference);
             city.ApplyEvents(events);
-            newsManager.ShowNews(events);
         }
         else
         {
-            Debug.Log($"Day {city.currentDay}: No events scheduled.");
+            NewsManager.Instance.ShowNews(null, previousDayEnergyDifference);
         }
 
         LogAllLocations();
@@ -94,13 +145,6 @@ public class CityManager : MonoBehaviour
         {
             Debug.Log("Day " + city.currentDay + " has passed.");
         }
-    }
-    
-    public void WinGame()
-    {
-        Debug.Log("You win!");
-        isGameOver = true;
-        UpdateFinalMessageUI("You win!!!!");
     }
     
     private void LogAllLocations()
