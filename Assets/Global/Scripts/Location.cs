@@ -1,3 +1,5 @@
+using System;
+using System.Text;
 using UnityEngine;
 
 public class Location : MonoBehaviour
@@ -27,6 +29,12 @@ public class Location : MonoBehaviour
     public void EnableLocation()
     {
         enabled = true;
+    }
+
+    public String getLocationString()
+    {
+        return "Building name : " + type.ToString() + 
+               "Base Energy Amount: " + baseEnergyAmount.ToString();
     }
 }
 

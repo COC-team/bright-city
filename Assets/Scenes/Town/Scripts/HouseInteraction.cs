@@ -3,17 +3,13 @@ using UnityEngine;
 public class HouseInteraction : MonoBehaviour
 {
     public PopupController popupController;
-    public string popupText = "Это дом!";
+    public string popupText = "nothing";
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (popupController != null)
         {
             popupController.ShowPopup(popupText);
-        }
-        else
-        {
-            Debug.Log("hi");
         }
     }
 }
