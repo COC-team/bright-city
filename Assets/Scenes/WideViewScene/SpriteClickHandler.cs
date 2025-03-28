@@ -1,31 +1,33 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SpriteClickHandler : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
-    public Color highlightColor = Color.red; // Цвет выделения
-    public string sceneToLoad = "NextScene"; // Название сцены для загрузки
+    public Color highlightColor = Color.red;
+    public string sceneToLoad = "NextScene";
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color; // Запоминаем оригинальный цвет
+        originalColor = spriteRenderer.color;
+
+        // Preload the scene in the background
+        SceneLoader.Instance.PreloadScene(sceneToLoad);
     }
 
     void OnMouseEnter()
     {
-        spriteRenderer.color = highlightColor; // Меняем цвет при наведении
+        spriteRenderer.color = highlightColor;
     }
 
     void OnMouseExit()
     {
-        spriteRenderer.color = originalColor; // Возвращаем цвет
+        spriteRenderer.color = originalColor;
     }
 
     void OnMouseDown()
     {
-        SceneManager.LoadScene(sceneToLoad); // Загружаем сцену при клике
+        SceneLoader.Instance.ActivateScene(sceneToLoad); // Activate the preloaded scene
     }
 }
