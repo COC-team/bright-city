@@ -268,7 +268,7 @@ public class CityManager : MonoBehaviour
         // Select number of events (0 to 3)
         int eventCount;
         int randomValue = UnityEngine.Random.Range(0, 100);
-        if (city.currentDay == 0)
+        if (city.currentDay == 0 || city.currentDay == 1)
         {
             eventCount = 0;
         }
@@ -473,7 +473,7 @@ public class CityManager : MonoBehaviour
     private void InitializeBaseMessagesByDay()
     {
         baseMessageByDay = new Dictionary<int, string>();
-        baseMessageByDay[1] = "Day 1: Let's get started.";
+        baseMessageByDay[1] = "Day 1: You will unlock locations throughout next 14 days.\nREMEMBER: you need to get as close as possible to electricity consuming level or \nPEOPLE WILL DIE";
         baseMessageByDay[2] = "Day 2: Things are getting interesting.";
         baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
         baseMessageByDay[4] = "Day 4: The city is evolving, stay vigilant.";
