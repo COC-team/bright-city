@@ -1929,13 +1929,14 @@ GameObject:
   - component: {fileID: 833242037}
   - component: {fileID: 833242035}
   - component: {fileID: 833242036}
+  - component: {fileID: 833242039}
   m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &833242035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,6 +2035,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000061035156, y: 0.000030517578}
   m_SizeDelta: {x: 1829.408, y: 1029.041}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &833242039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833242034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996978c54d90e4a4fb0ef9c8f91c91c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.04
+  darkenAmount: 0.1
+  animationSpeed: 10
 --- !u!1 &870734404
 GameObject:
   m_ObjectHideFlags: 0
