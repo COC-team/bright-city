@@ -9,6 +9,7 @@ public class Location : MonoBehaviour
     public LocationType type;
     public int baseEnergyAmount;
     public int currentDayEnergyAmount;
+    public string description;
     [FormerlySerializedAs("enabled")] public bool enabledLocation = false;
     
     public Location(LocationType type, int baseEnergyAmount = 0)
@@ -50,8 +51,9 @@ public class Location : MonoBehaviour
 
     public String getLocationString()
     {
-        return "Building name: " + type + 
-               "\nBase Energy Amount: " + baseEnergyAmount;
+        return "Building name: " + type +
+               "\nBase Energy Amount: " + baseEnergyAmount
+               + "\nDescription: " + description;
     }
 }
 

@@ -636,6 +636,8 @@ MonoBehaviour:
   type: 7
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: "Betting big on pulling the legendary \u201CI\u2019m-not-broke\u201D
+    card"
   enabledLocation: 0
 --- !u!114 &358782201
 MonoBehaviour:
@@ -1679,6 +1681,7 @@ MonoBehaviour:
   type: 4
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Where you go to accidentally create 5-second viral dance trends
   enabledLocation: 0
 --- !u!1 &698864750
 GameObject:
@@ -2054,6 +2057,7 @@ MonoBehaviour:
   type: 0
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Where doctors prescribe TikTok dances for quicker recovery
   enabledLocation: 0
 --- !u!114 &720736668
 MonoBehaviour:
@@ -2253,6 +2257,7 @@ MonoBehaviour:
   type: 8
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: "Nature\u2019s Wi-Fi-free zone, except for the dog memes"
   enabledLocation: 0
 --- !u!114 &744599010
 MonoBehaviour:
@@ -3202,8 +3207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -29.060059, y: 122.04401}
-  m_SizeDelta: {x: -2830.98, y: -1611.63}
+  m_AnchoredPosition: {x: 92.315, y: 96}
+  m_SizeDelta: {x: -2588.23, y: -1576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085518364
 MonoBehaviour:
@@ -3225,7 +3230,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: ygvybgvvbgvbgvbygvygv guvgtvtgvtft6fg tvtfgt6frt6frtftfrtfr6t bgygtyg7t6frt6fr6f
+    ytgt6ft6rfrt6 tgtfgt6ftr6hbnhbbbbgy ygytgytgtygygygyg6yg6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 384c69965e9482247b175396a6ebad91, type: 2}
   m_sharedMaterial: {fileID: 8331384636377243729, guid: 384c69965e9482247b175396a6ebad91, type: 2}
@@ -3737,6 +3743,7 @@ MonoBehaviour:
   type: 5
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Industrial beats dropping harder than your productivity
   enabledLocation: 0
 --- !u!114 &1272133084
 MonoBehaviour:
@@ -4409,6 +4416,7 @@ MonoBehaviour:
   type: 2
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Grocery shopping, but make it a speedrun challenge
   enabledLocation: 0
 --- !u!114 &1554679136
 MonoBehaviour:
@@ -4767,6 +4775,7 @@ MonoBehaviour:
   type: 3
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Where the popcorn costs more than your monthly subscription services
   enabledLocation: 0
 --- !u!1 &1744350803
 GameObject:
@@ -4958,6 +4967,7 @@ MonoBehaviour:
   type: 9
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: IRL Stardew Valley, but with less romance and more cow drama
   enabledLocation: 0
 --- !u!114 &1828884657
 MonoBehaviour:
@@ -5450,6 +5460,7 @@ MonoBehaviour:
   type: 1
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: The ultimate collab hub where homework influencers thrive
   enabledLocation: 0
 --- !u!1 &1950901725
 GameObject:
@@ -6149,6 +6160,7 @@ MonoBehaviour:
   type: 6
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Where degrees come with free existential crises and memes
   enabledLocation: 0
 --- !u!114 &2082932939
 MonoBehaviour:
