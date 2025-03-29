@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Scenes.PowerStation.Scripts;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StationManager  : MonoBehaviour
@@ -7,17 +9,19 @@ public class StationManager  : MonoBehaviour
     public static StationManager Instance { get; private set; }  // Singleton Instance
     public GameObject cardDeckPanel;
     public GameObject cardsInUsePanel;
-    private DynamicList cardDeck;
-    private DynamicList cardsInUse;
+    public DynamicList cardDeck;
+    public DynamicList cardsInUse;
     public GameObject cardPrefab;
-    private Dictionary<int, List<GameObject>> cardsPerDay = new Dictionary<int, List<GameObject>>();
+    private Dictionary<int, List<CardInfo>> cardsPerDay = new Dictionary<int, List<CardInfo>>();
 
     private int energyAmount = 0;
 
     private void Start()
     {
-        cardDeck = cardDeckPanel.GetComponent<DynamicList>();
-        cardsInUse = cardsInUsePanel.GetComponent<DynamicList>();
+        // cardDeck = cardDeckPanel.GetComponent<DynamicList>();
+        // cardsInUse = cardsInUsePanel.GetComponent<DynamicList>();
+        cardDeck = new DynamicList();
+        cardsInUse = new DynamicList();
         InitCards();
         AddCardsOfDay(0);
     }
@@ -39,7 +43,6 @@ public class StationManager  : MonoBehaviour
     public void ClearCards()
     {
         // cardDeck.DestroyAllItems();
-        return; // TODO: Remove this
         cardsInUse.DestroyAllItems();
     }
     
@@ -59,9 +62,8 @@ public class StationManager  : MonoBehaviour
     }
     public int GetEnergy()
     {
-        return 0; // TODO: Remove this
         int producedPower = 0;
-        List<Card> usedCards = cardsInUse.GetItems();
+        List<CardInfo> usedCards = cardsInUse.GetItems();
         foreach (var usedCard in usedCards)
         {
             if (usedCard.electricity > 0)
@@ -74,13 +76,13 @@ public class StationManager  : MonoBehaviour
 
     void InitCards()
     {
-        List<GameObject> cards = new List<GameObject>();
+        List<CardInfo> cards = new List<CardInfo>();
         cards.Add(CreateCard("1 power", "Gives 1 power to city", 1));
         cards.Add(CreateCard("2 power", "Gives 2 power to city", 2));
         cards.Add(CreateCard("3 power", "Gives 3 power to city", 3));
         cards.Add(CreateCard("4 power", "Gives 4 power to city", 4));
         cardsPerDay.Add(0, cards);
-        cards = new List<GameObject>();
+        cards = new List<CardInfo>();
         cards.Add(CreateCard("5 power", "Gives 5 power to city", 5));
         cards.Add(CreateCard("10 power", "Gives 10 power to city", 10));
         cards.Add(CreateCard("15 power", "Gives 15 power to city", 15));
@@ -95,20 +97,23 @@ public class StationManager  : MonoBehaviour
         {
             foreach (var card in cardsPerDay[day])
             {
-                card.SetActive(true);
+                // if (card.card != null)
+                //     card.card.SetActive(true);
+                cardDeck.AddItem(card);
             }
         }
     }
 
-    GameObject CreateCard(string cardName, string description, int electricity = 0, Event cardEvent = null)
+    CardInfo CreateCard(string cardName, string description, int electricity = 0, Event cardEvent = null)
     {
-        var cardObject = Instantiate(cardPrefab, cardDeckPanel.transform);
-        cardObject.SetActive(false);
-        var card = cardObject.GetComponent<Card>();
+        // var cardObject = Instantiate(cardPrefab, cardDeckPanel.transform);
+        // cardObject.SetActive(false);
+        // var card = cardObject.GetComponent<Card>();
+        var card = new CardInfo();
         card.electricity = electricity;
         card.cityEvent = cardEvent;
         card.cardName = cardName;
         card.cardDescription = description;
-        return cardObject;
+        return card;
     }
 }

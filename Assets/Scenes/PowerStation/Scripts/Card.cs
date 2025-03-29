@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Scenes.PowerStation.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,26 +8,43 @@ using UnityEngine.EventSystems;
 public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public GameObject card;
-    public Event cityEvent;
-    public int electricity;
-    public string cardName;
-    public string cardDescription;
+
+    public CardInfo cardInfo;
+    // public Event cityEvent;
+    // public int electricity;
+    // public string cardName;
+    // public string cardDescription;
     private Vector3 startPosition;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
+    {
+        // if (card == null) return;
+        // TMP_Text[] cardTexts = card.GetComponentsInChildren<TMP_Text>();
+        // foreach (var cardText in cardTexts)
+        // {
+        //     cardText.text = cardText.name switch
+        //     {
+        //         "Card name" => cardName,
+        //         "Card description" => cardDescription,
+        //         _ => cardText.text
+        //     };
+        // }
+        
+    }
+
+    public void SetText()
     {
         TMP_Text[] cardTexts = card.GetComponentsInChildren<TMP_Text>();
         foreach (var cardText in cardTexts)
         {
             cardText.text = cardText.name switch
             {
-                "Card name" => cardName,
-                "Card description" => cardDescription,
+                "Card name" => cardInfo.cardName,
+                "Card description" => cardInfo.cardDescription,
                 _ => cardText.text
             };
         }
-        
     }
 
     // Update is called once per frame
@@ -97,6 +115,6 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
 
     public void OnDestroy()
     {
-        Destroy(card);
+        // Destroy(card);
     }
 }

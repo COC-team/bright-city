@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 36740501}
   - component: {fileID: 36740500}
   - component: {fileID: 36740499}
+  - component: {fileID: 36740504}
   m_Layer: 5
   m_Name: CardsInUse
   m_TagString: Untagged
@@ -171,8 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba0cb8166fe1d44196fa2cb1993aa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 0}
-  contentPanel: {fileID: 36740498}
 --- !u!114 &36740500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +250,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36740497}
   m_CullTransparentMesh: 1
+--- !u!114 &36740504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36740497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216e6e550666294428783f86b7d39451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 7088799576466137103, guid: 755cd7db9302c5446b0583f4b49118a0, type: 3}
 --- !u!1 &130167266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1234084022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,6 +1525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3c2e609efef874d9642a93d367e010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropZoneName: 
   to: {fileID: 36740499}
   from: {fileID: 2010961458}
 --- !u!114 &1666611243
@@ -1784,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1775047071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1995217148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,6 +2113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDeckPanel: {fileID: 2010961456}
   cardsInUsePanel: {fileID: 36740497}
+  cardDeck: {fileID: 0}
+  cardsInUse: {fileID: 0}
   cardPrefab: {fileID: 7088799576466137103, guid: 755cd7db9302c5446b0583f4b49118a0, type: 3}
 --- !u!4 &1995217149
 Transform:
@@ -2130,6 +2145,7 @@ GameObject:
   - component: {fileID: 2010961459}
   - component: {fileID: 2010961458}
   - component: {fileID: 2010961463}
+  - component: {fileID: 2010961464}
   m_Layer: 5
   m_Name: CardDeck
   m_TagString: Untagged
@@ -2168,8 +2184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba0cb8166fe1d44196fa2cb1993aa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 0}
-  contentPanel: {fileID: 2010961457}
 --- !u!114 &2010961459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,6 +2260,19 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
+--- !u!114 &2010961464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010961456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674cb2423db94bd7834f790c05b86a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 7088799576466137103, guid: 755cd7db9302c5446b0583f4b49118a0, type: 3}
 --- !u!1 &2062177296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,6 +2323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3c2e609efef874d9642a93d367e010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropZoneName: 
   to: {fileID: 2010961458}
   from: {fileID: 36740499}
 --- !u!114 &2062177299
@@ -2365,8 +2393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f063af0d39f5e48bd255cf5275df87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActiveScene: 
-  originalScene: 
 --- !u!4 &2099265816
 Transform:
   m_ObjectHideFlags: 0

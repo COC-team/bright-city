@@ -1,51 +1,52 @@
 using System.Collections.Generic;
+using Scenes.PowerStation.Scripts;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DynamicList : MonoBehaviour
+public class DynamicList
 {
-    public Transform contentPanel; // Assign Panel (with Vertical Layout Group)
-    private List<Card> items = new List<Card>();
+    // public Transform contentPanel; // Assign Panel (with Vertical Layout Group)
+    private List<CardInfo> items = new List<CardInfo>();
 
     void Start()
     {
-        Card[] cards =  contentPanel.GetComponentsInChildren<Card>();
-        foreach (var card in cards)
-        {
-            AddItem(card);
-        }
+        // Card[] cards =  contentPanel.GetComponentsInChildren<Card>();
+        // foreach (var card in cards)
+        // {
+        //     AddItem(card);
+        // }
     }
-    public void AddItem(Card newCard)
+    public void AddItem(CardInfo newCard)
     {
         items.Add(newCard);
-        newCard.transform.SetParent(contentPanel);
     }
     
 
-    public bool Contains(Card card)
+    public bool Contains(CardInfo card)
     {
         return items.Contains(card);
     }
 
-    public void RemoveItem(Card item)
+    public void RemoveItem(CardInfo item)
     {
+        // print("HUI BLYATB");
         if (items.Contains(item))
         {
             items.Remove(item);
         }
     }
 
-    public List<Card> GetItems()
+    public List<CardInfo> GetItems()
     {
         return items;
     }
 
     public void DestroyAllItems()
     {
-        foreach (var card in items)
-        {
-            Destroy(card);
-        }
+        // foreach (var card in items)
+        // {
+        //     Destroy(card.card);
+        // }
         items.Clear();
     }
 }
