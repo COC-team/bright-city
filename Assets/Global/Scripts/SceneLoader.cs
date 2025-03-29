@@ -76,6 +76,7 @@ public class SceneLoader : MonoBehaviour
         });
         CityManager.Instance.UpdateDayCounterUI();
         CityManager.Instance.UpdateEnergyAmountUI();
+        CityManager.Instance.UpdatePopulationAmountUI();
     }
     
     public void LoadSceneAndCollectLocations(string sceneToLoad)

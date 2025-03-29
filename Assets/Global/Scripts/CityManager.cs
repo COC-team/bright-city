@@ -44,6 +44,10 @@ public class CityManager : MonoBehaviour
         InitializeEvents();
         InitializeEnablingLocationsByDay();
         InitializeBaseMessagesByDay();
+
+        UpdateEnergyAmountUI();
+        UpdateDayCounterUI();
+        UpdatePopulationAmountUI();
     }
     
     private IEnumerator WaitForSceneLoaderAndLoadScene()
@@ -110,6 +114,7 @@ public class CityManager : MonoBehaviour
         if (previousDayEnergyDifference != 0)
         {
             city.population -= previousDayEnergyDifference;
+            UpdatePopulationAmountUI();
         }
         
         if (city.population <= 0)
@@ -186,7 +191,7 @@ public class CityManager : MonoBehaviour
         {
             // Get the component from the GameObject
             TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
-            component.text = "Day: " + city.currentDay;  // Update text here
+            component.text = city.currentDay.ToString();  // Update text here
         }
     }
     
@@ -199,7 +204,20 @@ public class CityManager : MonoBehaviour
         {
             // Get the component from the GameObject
             TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
-            component.text = "Energy: " + StationManager.Instance.GetEnergy();
+            component.text = StationManager.Instance.GetEnergy().ToString();
+        }
+    }
+    
+    public void UpdatePopulationAmountUI()
+    {
+        GameObject targetObject = GameObject.Find("Population");
+
+        // Check if the GameObject was found
+        if (targetObject != null)
+        {
+            // Get the component from the GameObject
+            TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
+            component.text = city.population.ToString();
         }
     }
     
