@@ -287,7 +287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &68254374
@@ -425,7 +425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &120862456
@@ -648,7 +648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &223240296
@@ -1231,7 +1231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &488457570
@@ -1417,7 +1417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186, y: -891}
+  m_AnchoredPosition: {x: 186, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515197568
@@ -1652,7 +1652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &527656754
@@ -2117,10 +2117,10 @@ RectTransform:
   - {fileID: 34792738}
   m_Father: {fileID: 488457575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1920, y: 1080}
-  m_SizeDelta: {x: 3840, y: 2160}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -821.89}
+  m_SizeDelta: {x: 0, y: 516.218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602570438
 MonoBehaviour:
@@ -2257,7 +2257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698864752
@@ -3345,7 +3345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1106026516
@@ -3601,7 +3601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1175165912
@@ -3737,7 +3737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -890}
+  m_AnchoredPosition: {x: 184, y: 0}
   m_SizeDelta: {x: 8.52, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1221184017
@@ -4809,7 +4809,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ClosePopup
+          m_StringArgument: ClosePopup()
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &1559569156
@@ -5273,7 +5273,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &1737438098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6498,7 +6498,7 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
