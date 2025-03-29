@@ -189,7 +189,7 @@ public class CityManager : MonoBehaviour
         {
             // Get the component from the GameObject
             TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
-            component.text = "Day: " + city.currentDay;  // Update text here
+            component.text = city.currentDay.ToString();  // Update text here
         }
     }
     
