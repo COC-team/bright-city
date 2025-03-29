@@ -21,6 +21,7 @@ public class ConfirmationDialog : MonoBehaviour
     public void Show(string message)
     {
         messageText.text = message;
+        CityManager.Instance.popupOpened = true;
         dialogPanel.SetActive(true);
     }
 
@@ -33,6 +34,7 @@ public class ConfirmationDialog : MonoBehaviour
     private void OnCancelClicked()
     {
         dialogPanel.SetActive(false);
+        CityManager.Instance.popupOpened = false;
     }
 }
 
