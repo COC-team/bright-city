@@ -104,6 +104,7 @@ public class CityManager : MonoBehaviour
         city.SwitchNextDay();
         UpdateDayCounterUI();
         EnableCurrentDayLocation();
+        StationManager.Instance.AddCardsOfDay(city.currentDay);
         
         if (eventsByDay.ContainsKey(city.currentDay))
         {
