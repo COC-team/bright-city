@@ -41,11 +41,38 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: separate
+    uniqueID: 3094180875
+    locked: 0
+  - name: casino
+    uniqueID: 1577850593
+    locked: 0
+  - name: supermarket
+    uniqueID: 1000381973
+    locked: 0
+  - name: hospita
+    uniqueID: 778333025
+    locked: 0
+  - name: school
+    uniqueID: 2106262197
+    locked: 0
+  - name: factory
+    uniqueID: 4214834159
+    locked: 0
+  - name: farm
+    uniqueID: 1113396541
+    locked: 0
+  - name: popup
+    uniqueID: 205577165
+    locked: 0
   - name: text
     uniqueID: 509178275
     locked: 0
   - name: button
     uniqueID: 796098187
+    locked: 0
+  - name: label
+    uniqueID: 613566455
     locked: 0
   m_RenderingLayers:
   - Default

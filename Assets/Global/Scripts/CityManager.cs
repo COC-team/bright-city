@@ -317,9 +317,9 @@ public class CityManager : MonoBehaviour
                 List<Event> hospitalEvents = new List<Event>
                 {
                     new Event(EventType.SOME_LOCATIONS, "Medical Crisis. Due to a power shortage, life-support systems shut down, endangering patients in critical condition.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Hospital, 5 } } },
-                    new Event(EventType.SOME_LOCATIONS, "Hospital Strike. Nurses and doctors go on strike, demanding better pay and working conditions. Large parts of the hospital cease operations.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Hospital, 0 } } },
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Hospital, 7 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Hospital Strike. Nurses and doctors go on strike, demanding better pay and working conditions. Hospital stops working.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Hospital, -60 } } },
                     new Event(EventType.SOME_LOCATIONS, "Modern Equipment. The hospital acquires new medical devices that require stable electricity supply, greatly improving the quality of care.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Hospital, 6 } } }
                 };
@@ -328,10 +328,10 @@ public class CityManager : MonoBehaviour
             case LocationType.School:
                 List<Event> schoolEvents = new List<Event>
                 {
-                    new Event(EventType.SOME_LOCATIONS, "School Program Delays. The new educational program rollout is delayed. Some schools are working with limited resources.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.School, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "School Program Delays. The new educational program rollout is delayed. School is not working.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.School, -30 } } },
                     new Event(EventType.SOME_LOCATIONS, "Teacher Shortage. Schools temporarily lack enough teachers, reducing energy usage due to fewer classes.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.School, 1 } } },
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.School, 3 } } },
                     new Event(EventType.SOME_LOCATIONS, "Student Growth. The city sees an increase in the number of school-aged children, requiring additional equipment for classrooms.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.School, 4 } } },
                     new Event(EventType.SOME_LOCATIONS, "Digital Learning Implementation. Interactive boards and computers are installed in the school to enhance the educational process.") 
@@ -345,7 +345,7 @@ public class CityManager : MonoBehaviour
                     new Event(EventType.SOME_LOCATIONS, "Supply Issues. Due to global logistical problems, deliveries to the supermarket are delayed, leaving some shelves empty. This reduces energy usage.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Supermarket, 2 } } },
                     new Event(EventType.SOME_LOCATIONS, "Low Sales. Due to the economic crisis, supermarket sales drop, temporarily reducing electricity consumption.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Supermarket, 0 } } },
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Supermarket, -20 } } },
                     new Event(EventType.SOME_LOCATIONS, "Hypermarket Opening. A new massive hypermarket opens in the city, offering a wide range of products and convenient shopping conditions.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Supermarket, 5 } } },
                     new Event(EventType.SOME_LOCATIONS, "Cooling Storage System. New refrigeration units are installed for product storage, requiring additional power.") 
@@ -372,8 +372,8 @@ public class CityManager : MonoBehaviour
                 {
                     new Event(EventType.SOME_LOCATIONS, "Loud Party. A noisy celebration with concerts and dancing is taking place, increasing energy consumption for lights and sound.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Club, 6 } } },
-                    new Event(EventType.SOME_LOCATIONS, "Power Outage. The club is experiencing electrical issues, halting all events and reducing energy consumption.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Club, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Power Outage. The club is experiencing electrical issues. No more fun for today") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Club, -30 } } },
                     new Event(EventType.SOME_LOCATIONS, "Neon Lighting and Laser Show. Powerful lasers and dynamic lighting are installed to create a spectacular show.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Club, 4 } } }
                 };
@@ -382,10 +382,10 @@ public class CityManager : MonoBehaviour
             case LocationType.Factory:
                 List<Event> factoryEvents = new List<Event>
                 {
-                    new Event(EventType.SOME_LOCATIONS, "Environmental Crisis. The factory faces an environmental disaster due to improper waste disposal, halting production temporarily.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Factory, 0 } } },
-                    new Event(EventType.SOME_LOCATIONS, "Factory Strike. Factory workers go on strike, demanding better pay. Production halts, lowering energy consumption.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Factory, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Environmental Crisis. The factory faces an environmental disaster due to improper waste disposal, pausing production temporarily.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Factory, -80 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Factory Strike. Factory workers go on strike, demanding better pay. Production stopping, lowering energy consumption.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Factory, -80 } } },
                     new Event(EventType.SOME_LOCATIONS, "Industrial Boom. Due to a stable electricity supply, the factory expands its production, creating new jobs.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Factory, 6 } } },
                     new Event(EventType.SOME_LOCATIONS, "Process Automation. New robotic production lines are introduced, increasing efficiency but requiring more energy.") 
@@ -398,8 +398,8 @@ public class CityManager : MonoBehaviour
                 {
                     new Event(EventType.SOME_LOCATIONS, "Gaming Crisis. Multiple machines in the casino malfunction, leading to fewer customers and reduced energy use.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Casino, 2 } } },
-                    new Event(EventType.SOME_LOCATIONS, "Casino Closure. The casino is closed for maintenance, reducing energy usage in the area.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Casino, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Casino Closure. The casino is closed for maintenance.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Casino, -25 } } },
                     new Event(EventType.SOME_LOCATIONS, "International Poker Tournament. The casino hosts a prestigious tournament, attracting players from around the world. The atmosphere is electric.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Casino, 4 } } },
                     new Event(EventType.SOME_LOCATIONS, "VIP Room with Slot Machines. The casino opens a luxurious room for wealthy clients, equipped with high-tech slot machines.") 
@@ -413,7 +413,7 @@ public class CityManager : MonoBehaviour
                     new Event(EventType.SOME_LOCATIONS, "Seasonal Work. The park is undergoing seasonal work to plant new trees and shrubs, requiring extra energy for watering and lighting.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Park, 4 } } },
                     new Event(EventType.SOME_LOCATIONS, "City Cleanup. The park is being cleaned manually, without electricity, lowering energy consumption.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Park, 0 } } },
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Park, -10 } } },
                     new Event(EventType.SOME_LOCATIONS, "City Festival. A music and food festival is held in the park, with locals enjoying the festive atmosphere.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Park, 3 } } },
                     new Event(EventType.SOME_LOCATIONS, "Night Illumination. Decorative lanterns are installed to light the paths and create a cozy ambiance.") 
@@ -424,10 +424,10 @@ public class CityManager : MonoBehaviour
             case LocationType.Farm:
                 List<Event> farmEvents = new List<Event>
                 {
-                    new Event(EventType.SOME_LOCATIONS, "Farmers' Strike. Farmers go on strike due to low wages and poor working conditions, halting farm production.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Farm, 0 } } },
-                    new Event(EventType.SOME_LOCATIONS, "Crop Failure. A poor harvest season leads to a halt in farm production, temporarily lowering energy consumption.") 
-                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Farm, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Farmers' Strike. Farmers go on strike due to low wages and poor working conditions.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Farm, -20 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Crop Failure. A poor harvest season leads to a pause in farm production.") 
+                    { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Farm, -20 } } },
                     new Event(EventType.SOME_LOCATIONS, "Farm Expansion. Farmers expand their agricultural lands, increasing food production for the city.") 
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Farm, 5 } } },
                     new Event(EventType.SOME_LOCATIONS, "Irrigation Systems. Modern irrigation systems are installed, allowing the farm to produce larger crops.") 
@@ -437,14 +437,14 @@ public class CityManager : MonoBehaviour
             case LocationType.University:
                 List<Event> universityEvents = new List<Event>
                 {
-                    new Event(EventType.SOME_LOCATIONS, "Professor Strike. Professors demand better salaries, halting university operations.") 
-                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Professor Strike. Professors demand better salaries, pausing university operations.") 
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, -30 } } },
                     new Event(EventType.SOME_LOCATIONS, "Research Breakthrough. Scientists at the university make a major discovery, boosting technological progress.") 
                         { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 5 } } },
                     new Event(EventType.SOME_LOCATIONS, "Government Funding. The university receives additional funding, improving education quality.") 
-                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 3 } } },
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 0 } } },
                     new Event(EventType.SOME_LOCATIONS, "Student Protest. Students rally for reforms, causing temporary disruptions in studies.") 
-                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, -2 } } }
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 2 } } }
                 };
                 return universityEvents[UnityEngine.Random.Range(0, universityEvents.Count)];
 
@@ -456,16 +456,16 @@ public class CityManager : MonoBehaviour
     private void InitializeEnablingLocationsByDay()
     {
         enablingLocationsByDay = new Dictionary<int, LocationType>();
-        enablingLocationsByDay[1] = LocationType.Hospital;
-        enablingLocationsByDay[2] = LocationType.School;
-        enablingLocationsByDay[3] = LocationType.Supermarket;
-        enablingLocationsByDay[4] = LocationType.Cinema;
-        enablingLocationsByDay[5] = LocationType.Club;
-        enablingLocationsByDay[6] = LocationType.Factory;
-        enablingLocationsByDay[7] = LocationType.Casino;
-        enablingLocationsByDay[8] = LocationType.Farm;
-        enablingLocationsByDay[9] = LocationType.Park;
-        enablingLocationsByDay[10] = LocationType.University;
+        enablingLocationsByDay[1] = LocationType.Farm;
+        enablingLocationsByDay[2] = LocationType.Cinema;
+        enablingLocationsByDay[3] = LocationType.Park;
+        enablingLocationsByDay[4] = LocationType.Hospital;
+        enablingLocationsByDay[5] = LocationType.University;
+        enablingLocationsByDay[6] = LocationType.Casino;
+        enablingLocationsByDay[7] = LocationType.School;
+        enablingLocationsByDay[8] = LocationType.Factory;
+        enablingLocationsByDay[9] = LocationType.Supermarket;
+        enablingLocationsByDay[10] = LocationType.Club;
     }
     
     private void InitializeBaseMessagesByDay()
@@ -474,7 +474,16 @@ public class CityManager : MonoBehaviour
         baseMessageByDay[1] = "Welcome to the city! Day 1.";
         baseMessageByDay[2] = "Day 2: Things are getting interesting.";
         baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
-        baseMessageByDay[4] = "Day 4: The city is growing!";
-        baseMessageByDay[5] = "Final Day: Make it count!";
+        baseMessageByDay[4] = "Day 4: The city is evolving, stay vigilant.";
+        baseMessageByDay[5] = "Day 5: Challenges arise, plan wisely.";
+        baseMessageByDay[6] = "Day 6: The citizens rely on your decisions.";
+        baseMessageByDay[7] = "Day 7: A week has passed, stability is key.";
+        baseMessageByDay[8] = "Day 8: New opportunities and risks emerge.";
+        baseMessageByDay[9] = "Day 9: Keep an eye on resources and morale.";
+        baseMessageByDay[10] = "Day 10: The city is growing, manage it well.";
+        baseMessageByDay[11] = "Day 11: Strategic planning will pay off.";
+        baseMessageByDay[12] = "Day 12: The future of the city is in your hands.";
+        baseMessageByDay[13] = "Day 13: A crucial time, make wise choices.";
+        baseMessageByDay[14] = "Final Day: Two weeks in, your leadership is tested.";
     }
 }
