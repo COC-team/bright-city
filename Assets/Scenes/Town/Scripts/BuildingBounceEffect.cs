@@ -38,7 +38,7 @@ public class BuildingBounceEffect : MonoBehaviour
 
     void Update()
     {
-        if (CityManager.Instance.popupOpened)
+        if (CityManager.Instance != null && CityManager.Instance.popupOpened)
         {
             // Если попап открыт, не обновляй эффект
             return;

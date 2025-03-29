@@ -70,6 +70,7 @@ public class CityManager : MonoBehaviour
         Debug.Log("You win!");
         isGameOver = true;
         UpdateFinalMessageUI("You win!!!!");
+        SceneLoader.Instance.LoadNewScene("Win");
     }
     
     public void LooseGame()
@@ -77,6 +78,7 @@ public class CityManager : MonoBehaviour
         Debug.Log("You lose!");
         isGameOver = true;
         UpdateFinalMessageUI("You lose!!!!");
+        SceneLoader.Instance.LoadNewScene("Lose");
     }
     
     public void AddLocation(Location location)
