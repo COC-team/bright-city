@@ -17,12 +17,14 @@ public class PopupController : MonoBehaviour
     public void ShowPopup(string text)
     {
         popupPanel.SetActive(true);
+        CityManager.Instance.popupOpened = true;
         SetText(text);
     }
 
     public void ClosePopup()
     {
         popupPanel.SetActive(false);
+        CityManager.Instance.popupOpened = false;
         SetText(string.Empty);
     }
 

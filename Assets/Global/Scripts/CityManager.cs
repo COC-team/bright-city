@@ -15,6 +15,7 @@ public class CityManager : MonoBehaviour
     public TextMeshProUGUI finalMessage;
 
     private bool isGameOver = false;
+    public bool popupOpened = false;
     public City city;
     private Dictionary<int, List<Event>> eventsByDay;
     private Dictionary<int, LocationType> enablingLocationsByDay;
