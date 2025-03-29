@@ -7,7 +7,6 @@
     <list default="true" id="3c7a4641-fed5-49dc-b859-d34557a9bbc2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/MainScene/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/MainScene/MainScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +59,12 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/COC-team/taltech-game-jam.git&quot;,
-    &quot;accountId&quot;: &quot;4291c44d-c54f-446d-b8e5-cd206537a6ef&quot;
+    &quot;accountId&quot;: &quot;b55a0583-64f4-4c9a-9947-d51fa4930c5c&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/City.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CityManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CityManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NewsManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -81,7 +80,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;news-manager&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;add__events&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -102,6 +101,10 @@
       <workItem from="1743174551870" duration="4415000" />
       <workItem from="1743179037719" duration="1724000" />
       <workItem from="1743180789170" duration="59000" />
+      <workItem from="1743268916174" duration="10000" />
+      <workItem from="1743268930519" duration="13000" />
+      <workItem from="1743268963423" duration="14000" />
+      <workItem from="1743268993809" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="Add game manager logic.">
       <option name="closed" value="true" />
