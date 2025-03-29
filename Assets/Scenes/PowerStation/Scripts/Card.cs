@@ -58,8 +58,11 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
 
     public void OnDrag(PointerEventData eventData)
     {
-        card.transform.position += (Vector3) eventData.delta; // Move object with mouse
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Camera.main.WorldToScreenPoint(card.transform.position).z; // Preserve the card's z-position
+        card.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
+
 
     public void OnEndDrag(PointerEventData eventData)
     {
