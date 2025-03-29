@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
@@ -14,7 +15,7 @@ public class CityManager : MonoBehaviour
     public TextMeshProUGUI finalMessage;
 
     private bool isGameOver = false;
-    private City city;
+    public City city;
     private Dictionary<int, List<Event>> eventsByDay;
     private Dictionary<int, LocationType> enablingLocationsByDay;
     private int previousDayEnergyDifference = 0;
@@ -35,13 +36,34 @@ public class CityManager : MonoBehaviour
         city = new City();
         city.population = cityPopulation;
         city.maxDaysAmount = maxCityDaysAmount;
-        city.locations = new List<Location>(FindObjectsByType<Location>(FindObjectsSortMode.None));
+        StartCoroutine(WaitForSceneLoaderAndLoadScene());
         InitializeEvents();
         InitializeEnablingLocationsByDay();
+    }
+    
+    private IEnumerator WaitForSceneLoaderAndLoadScene()
+    {
+        // Wait until the next frame to ensure SceneLoader is initialized
+        yield return null;
+
+        // Ensure SceneLoader instance is available
+        if (SceneLoader.Instance != null)
+        {
+            SceneLoader.Instance.LoadSceneAndCollectLocations("Town");
+        }
+        else
+        {
+            Debug.LogError("SceneLoader instance is not available!");
+        }
+
+        // Log locations after loading the scene (if needed)
+        LogAllLocations();
     }
 
     private void Update()
     {
+        LogAllLocations();
+
         if (isGameOver)
         {
             return;
