@@ -13,8 +13,6 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
     public string cardDescription;
     private Vector3 startPosition;
     
-    public Texture2D cursorPointer;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
