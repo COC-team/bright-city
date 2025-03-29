@@ -39,7 +39,7 @@ public class NewsManager : MonoBehaviour
         }
         else
         {
-            newsText = "Today's news:\n";
+            newsText += "Today's news:\n";
             foreach (var eventItem in events)
             {
                 newsText += $"  - {eventItem.description}\n";
