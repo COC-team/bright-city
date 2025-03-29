@@ -275,16 +275,16 @@ public class CityManager : MonoBehaviour
         else if (city.currentDay <= 5 )
         {
             if (randomValue < 20) eventCount = 0;      // 15%
-            else if (randomValue < 60) eventCount = 1; // 25%
-            else if (randomValue < 95) eventCount = 2; // 45%
-            else eventCount = 3;                       // 15%
+            else if (randomValue < 80) eventCount = 1; // 25%
+            /*else if (randomValue < 95) eventCount = 2; // 45%*/
+            else eventCount = 2;                       // 15%
         }
         else
         {
             if (randomValue < 10) eventCount = 0;      // 15%
-            else if (randomValue < 25) eventCount = 1; // 25%
-            else if (randomValue < 70) eventCount = 2; // 45%
-            else eventCount = 3;                       // 15%
+            else if (randomValue < 30) eventCount = 1; // 25%
+            /*else if (randomValue < 70) eventCount = 2; // 45%*/
+            else eventCount = 2;                       // 15%
         }
 
 
@@ -473,7 +473,7 @@ public class CityManager : MonoBehaviour
     private void InitializeBaseMessagesByDay()
     {
         baseMessageByDay = new Dictionary<int, string>();
-        baseMessageByDay[1] = "Day 1: You will unlock locations throughout next 14 days.\nREMEMBER: you need to get as close as possible to electricity consuming level or \nPEOPLE WILL DIE";
+        baseMessageByDay[1] = "Day 1: You will unlock locations throughout next 14 days.\nREMEMBER: you need to get as close as possible to electricity consuming level or \nPEOPLE WILL DIE\n";
         baseMessageByDay[2] = "Day 2: Things are getting interesting.";
         baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
         baseMessageByDay[4] = "Day 4: The city is evolving, stay vigilant.";
