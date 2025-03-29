@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 6737636676858975929}
   - component: {fileID: 6693480601550681036}
   m_Layer: 5
-  m_Name: Card
+  m_Name: CardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,8 +247,8 @@ MonoBehaviour:
   defaultCursor: {fileID: 2800000, guid: 45d211a0038b5f04a9609103e92b7561, type: 3}
   card: {fileID: 7088799576466137103}
   electricity: 0
-  cardName: Electricity
-  cardDescription: 5 power
+  cardName: Prefab
+  cardDescription: Prefab
 --- !u!61 &6737636676858975929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7088799576466137103}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ef01918d05f8940878d7f90a1eeb7d, type: 3}
   m_Name: 
