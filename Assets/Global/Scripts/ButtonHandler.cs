@@ -5,18 +5,12 @@ public class ButtonClickHandler : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public Color highlightColor = Color.red; // Color when highlighted
-    public string sceneToLoad = "NextScene"; // Scene to load
+    public string sceneToLoad = "NextScene1"; // Scene to load when clicked
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color; // Save original color
-
-        // Preload the scene using SceneLoader
-        if (SceneLoader.Instance != null)
-        {
-            SceneLoader.Instance.PreloadScene(sceneToLoad);
-        }
     }
 
     void OnMouseEnter()
@@ -34,7 +28,7 @@ public class ButtonClickHandler : MonoBehaviour
         // Use the global SceneLoader to activate the scene
         if (SceneLoader.Instance != null)
         {
-            SceneLoader.Instance.ActivateScene(sceneToLoad);
+            SceneLoader.Instance.LoadNewScene(sceneToLoad); // Activate the preloaded scene
         }
         else
         {

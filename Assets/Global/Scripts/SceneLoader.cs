@@ -1,14 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
-using System.Collections.Generic;
 
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    private Dictionary<string, AsyncOperation> sceneLoaders = new Dictionary<string, AsyncOperation>();
-    private string currentActiveScene = "MainScene"; // Set your main scene name here
+    private string currentActiveScene;
+    private string originalScene;
 
     private void Awake()
     {
@@ -23,94 +23,83 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void PreloadScene(string sceneName)
+    public void LoadNewScene(string sceneName)
     {
-        if (!sceneLoaders.ContainsKey(sceneName))
+        if (sceneName == currentActiveScene)
         {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-            asyncLoad.allowSceneActivation = false;
-            asyncLoad.completed += (operation) =>
-            {
-                DeleteEventSystemsInScene(sceneName); // Delete EventSystem in the newly loaded scene
-                DisableAudioListenersInScene(sceneName);
-                SetSceneActive(sceneName, false); // Keep the scene inactive until it's activated explicitly
-            };
-            sceneLoaders.Add(sceneName, asyncLoad);
+            Debug.LogWarning($"Scene {sceneName} is already the active scene.");
+            return;
         }
+
+        Debug.Log($"Loading new scene: {sceneName}");
+
+        // Start the scene loading process
+        StartCoroutine(LoadSceneAsync(sceneName));
     }
 
-    public void ActivateScene(string sceneName)
+    private IEnumerator LoadSceneAsync(string newScene)
     {
-        if (sceneLoaders.ContainsKey(sceneName))
+        // Unload the current scene if it exists
+        if (!string.IsNullOrEmpty(currentActiveScene))
         {
-            // Deactivate current active scene before switching
-            SetSceneActive(currentActiveScene, false);
+            Debug.Log($"Unloading current scene: {currentActiveScene}");
+            AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(currentActiveScene);
 
-            // Activate new scene
-            sceneLoaders[sceneName].allowSceneActivation = true;
-            SetSceneActive(sceneName, true);
-
-            // Update the current active scene
-            currentActiveScene = sceneName;
-        }
-    }
-
-    private void SetSceneActive(string sceneName, bool isActive)
-    {
-        Scene scene = SceneManager.GetSceneByName(sceneName);
-
-        if (scene.IsValid())
-        {
-            GameObject[] rootObjects = scene.GetRootGameObjects();
-            foreach (GameObject obj in rootObjects)
+            // Wait for the unloading to complete
+            if (unloadOperation != null)
             {
-                obj.SetActive(isActive);
+                yield return new WaitUntil(() => unloadOperation.isDone);
+                Debug.Log($"Scene {currentActiveScene} successfully unloaded.");
             }
         }
+
+        // Begin loading the new scene
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Single);
+
+        // Ensure the newly loaded scene becomes the active scene
+        loadOperation.completed += (operation) =>
+        {
+            Debug.Log($"Scene {newScene} successfully loaded.");
+            currentActiveScene = newScene;
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene));
+        };
+
+        // Wait for the loading to complete
+        yield return new WaitUntil(() => loadOperation.isDone);
+    }
+    
+    public void LoadSceneAndCollectLocations(string sceneToLoad)
+    {
+        originalScene = SceneManager.GetActiveScene().name; // Save the current scene name
+        StartCoroutine(LoadSceneAndCollectCoroutine(sceneToLoad));
     }
 
-    private void DeleteEventSystemsInScene(string sceneName)
+    private IEnumerator LoadSceneAndCollectCoroutine(string sceneToLoad)
     {
-        Scene loadedScene = SceneManager.GetSceneByName(sceneName);
+        // Load the new scene additively
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        yield return loadOperation;
 
-        if (loadedScene.IsValid())
+        // Ensure the scene is fully loaded
+        Scene loadedScene = SceneManager.GetSceneByName(sceneToLoad);
+        while (!loadedScene.isLoaded)
         {
-            GameObject[] rootObjects = loadedScene.GetRootGameObjects();
-
-            foreach (GameObject obj in rootObjects)
-            {
-                // Find all EventSystems in the loaded scene
-                EventSystem[] eventSystems = obj.GetComponentsInChildren<EventSystem>(true); // Including inactive ones
-
-                foreach (EventSystem eventSystem in eventSystems)
-                {
-                    // Destroy the GameObject that holds the EventSystem (delete the entire GameObject)
-                    if (eventSystem != null)
-                    {
-                        Destroy(eventSystem.gameObject); // Delete the GameObject
-                    }
-                }
-            }
+            yield return null;
         }
-    }
 
-    private void DisableAudioListenersInScene(string sceneName)
-    {
-        Scene loadedScene = SceneManager.GetSceneByName(sceneName);
+        // Find all Location objects in the loaded scene
+        List<Location> locations = new List<Location>(FindObjectsByType<Location>(FindObjectsSortMode.None));
+        Debug.Log($"Found {locations.Count} locations in {sceneToLoad}");
 
-        if (loadedScene.IsValid())
-        {
-            GameObject[] rootObjects = loadedScene.GetRootGameObjects();
+        // Now, you can do something with those locations, like storing them in your City object
+        CityManager.Instance.city.locations = locations;
 
-            foreach (GameObject obj in rootObjects)
-            {
-                AudioListener[] audioListeners = obj.GetComponentsInChildren<AudioListener>(true); // Search all AudioListeners
-                
-                foreach (AudioListener audioListener in audioListeners)
-                {
-                    audioListener.enabled = false; // Disable all found AudioListeners
-                }
-            }
-        }
+        // Unload the loaded scene after collecting data
+        AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(sceneToLoad);
+        yield return unloadOperation;
+
+        // Load the original scene back (if needed)
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(originalScene));
+        Debug.Log("Returned to original scene: " + originalScene);
     }
 }
