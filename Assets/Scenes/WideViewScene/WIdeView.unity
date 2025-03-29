@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e82b464baff9e45a741f45a4407b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  highlightColor: {r: 0.99371064, g: 0.42810798, b: 0.42810798, a: 1}
   sceneToLoad: Town
 --- !u!114 &248770998
 MonoBehaviour:
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e82b464baff9e45a741f45a4407b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  highlightColor: {r: 0.99215686, g: 0.42745098, b: 0.42745098, a: 1}
   sceneToLoad: PowerStation
 --- !u!114 &533146090
 MonoBehaviour:
