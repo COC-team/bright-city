@@ -33,13 +33,14 @@ public class NewsManager : MonoBehaviour
         }
     }
 
-    public void ShowNews(String baseMessage, List<Event> events, int previousDayEnergyDifference, LocationType? locationType)
+    public void ShowNews(String baseMessage, List<Event> events, int neededEnergy, int actualEnergy, int previousDayEnergyDifference, LocationType? locationType)
     {
         Debug.Log("Showing news...");
         string newsText = baseMessage + "\n";
+        newsText += $"Previous day statistics:\n - used energy {actualEnergy}/{neededEnergy}\n";
         if (previousDayEnergyDifference != 0)
         {
-            newsText += $"Yesterday, died {previousDayEnergyDifference} citizens. :D\n";
+            newsText += $"- people left the town: {previousDayEnergyDifference}\n";
         }
         
         if (locationType != null)

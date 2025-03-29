@@ -21,6 +21,8 @@ public class CityManager : MonoBehaviour
     private Dictionary<int, LocationType> enablingLocationsByDay;
     private Dictionary<int, string> baseMessageByDay;
     private int previousDayEnergyDifference = 0;
+    private int previousDayNeededEnergy = 0;
+    private int previousDayActualEnergy = 0;
     
     private List<Event> usedEvents = new List<Event>(); // List to track used events
 
@@ -108,16 +110,15 @@ public class CityManager : MonoBehaviour
             Debug.Log("Game is already over. Cannot finish day.");
             return;
         }
-        int actualEnergy = StationManager.Instance.GetEnergy();
+        previousDayActualEnergy = StationManager.Instance.GetEnergy();
         StationManager.Instance.ClearCards();
-        int neededEnergy = 0;
+        previousDayNeededEnergy = 0;
         foreach (var location in city.getEnabledLocations())
         {
-            neededEnergy += location.currentDayEnergyAmount;
+            previousDayNeededEnergy += location.currentDayEnergyAmount;
         }
         
-        previousDayEnergyDifference = Math.Abs(actualEnergy - neededEnergy);
-        Debug.Log("Finished day required energy: " + neededEnergy);
+        previousDayEnergyDifference = Math.Abs(previousDayActualEnergy - previousDayNeededEnergy);
         if (previousDayEnergyDifference != 0)
         {
             city.population -= previousDayEnergyDifference;
@@ -161,21 +162,10 @@ public class CityManager : MonoBehaviour
         
         eventsByDay[city.currentDay] = new List<Event>();
         
-        if (eventsByDay.ContainsKey(city.currentDay))
-        {
-            Debug.Log($"Day {city.currentDay}: Events Occurring");
-            if (city.currentDay == 0)
-            {
-                NewsManager.Instance.ShowNews(baseMessage, new List<Event>(), previousDayEnergyDifference, unlockedLocation);
-            }
-            var events = GenerateRandomEventsForDay();
-            NewsManager.Instance.ShowNews(baseMessage, events, previousDayEnergyDifference, unlockedLocation);
-            city.ApplyEvents(events);
-        }
-        else
-        {
-            NewsManager.Instance.ShowNews(baseMessage, null, previousDayEnergyDifference, unlockedLocation);
-        }
+        Debug.Log($"Day {city.currentDay}: Events Occurring");
+        var events = GenerateRandomEventsForDay();
+        NewsManager.Instance.ShowNews(baseMessage, events, previousDayNeededEnergy, previousDayActualEnergy, previousDayEnergyDifference, unlockedLocation);
+        city.ApplyEvents(events);
 
         LogAllLocations();
     }
