@@ -7,7 +7,7 @@ public class City
     public int population;
     public int maxDaysAmount;
     public int currentDay = 0;
-    public List<Location> locations;
+    public List<Location> locations = new List<Location>();
     
     public void SwitchNextDay()
     {

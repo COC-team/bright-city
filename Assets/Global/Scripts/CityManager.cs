@@ -131,7 +131,8 @@ public class CityManager : MonoBehaviour
         
         UpdateDayCounterUI();
         var unlockedLocation = EnableCurrentDayLocation();
-
+        
+        StationManager.Instance.AddCardsOfDay(city.currentDay);
         UpdateEnergyAmountUI();
         
         if (eventsByDay.ContainsKey(city.currentDay))
