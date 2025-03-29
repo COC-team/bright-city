@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class NextDayButton : MonoBehaviour
 {
     public Button button;
-
+    public ConfirmationDialog confirmationDialog;
 
     private void Awake()
     {
@@ -22,7 +22,10 @@ public class NextDayButton : MonoBehaviour
             // Если попап открыт, не обновляй эффект
             return;
         }
-        CityManager.Instance.FinishDay();
+
+        var message = "Do you really want to finish the day?\nYou selected energy for this day is "
+                      + StationManager.Instance.GetEnergy() + "!";
+        confirmationDialog.Show(message);
     }
 
     // Clean up when the object is destroyed
