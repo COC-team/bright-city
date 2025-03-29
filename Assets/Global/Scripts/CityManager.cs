@@ -62,16 +62,6 @@ public class CityManager : MonoBehaviour
 
     private void Update()
     {
-        if (isGameOver)
-        {
-            return;
-        }
-        
-        // Simulate a day passing when pressing the space bar
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            FinishDay();
-        }
     }
     
     public void WinGame()
@@ -93,8 +83,13 @@ public class CityManager : MonoBehaviour
         city.locations.Add(location);
     }
 
-    private void FinishDay()
+    public void FinishDay()
     {
+        if (isGameOver)
+        {
+            Debug.Log("Game is already over. Cannot finish day.");
+            return;
+        }
         int actualEnergy = StationManager.Instance.energyAmount;
         int neededEnergy = 0;
         foreach (var location in city.getEnabledLocations())
@@ -108,11 +103,11 @@ public class CityManager : MonoBehaviour
             city.population -= previousDayEnergyDifference;
         }
         
-        // if (city.population <= 0)
-        // {
-        //     LooseGame();
-        //     return;
-        // }
+        if (city.population <= 0)
+        {
+            LooseGame();
+            return;
+        }
 
         SwitchNextDay();
     }
