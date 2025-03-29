@@ -23,6 +23,7 @@ public class PopupController : MonoBehaviour
 
     public void ClosePopup()
     {
+        Debug.LogWarning("huila");
         popupPanel.SetActive(false);
         CityManager.Instance.popupOpened = false;
         SetText(string.Empty);
