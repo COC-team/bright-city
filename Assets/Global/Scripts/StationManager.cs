@@ -72,9 +72,9 @@ public class StationManager  : MonoBehaviour
     {
         List<GameObject> cards = new List<GameObject>();
         cards.Add(CreateCard("5 power", "Gives 5 power to city", 5));
-        cards.Add(CreateCard("10 power", "Gives 5 power to city", 10));
-        cards.Add(CreateCard("15 power", "Gives 5 power to city", 15));
-        cards.Add(CreateCard("20 power", "Gives 5 power to city", 20));
+        cards.Add(CreateCard("10 power", "Gives 10 power to city", 10));
+        cards.Add(CreateCard("15 power", "Gives 15 power to city", 15));
+        cards.Add(CreateCard("20 power", "Gives 20 power to city", 20));
         
         cardsPerDay.Add(0, cards);
     }
@@ -83,7 +83,7 @@ public class StationManager  : MonoBehaviour
     {
         if (cardsPerDay.ContainsKey(day))
         {
-            foreach (var card in cardsPerDay)
+            foreach (var card in cardsPerDay[day])
             {
                 Debug.Log("dsfds");
             }
