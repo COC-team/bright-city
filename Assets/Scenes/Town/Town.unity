@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 7
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
   enabledLocation: 0
@@ -1041,7 +1041,6 @@ RectTransform:
   m_Children:
   - {fileID: 744599007}
   - {fileID: 1828884654}
-  - {fileID: 833242038}
   - {fileID: 1272133081}
   - {fileID: 2082932936}
   - {fileID: 1554679133}
@@ -1050,6 +1049,7 @@ RectTransform:
   - {fileID: 568231209}
   - {fileID: 720736662}
   - {fileID: 1671209214}
+  - {fileID: 833242038}
   - {fileID: 988041727}
   - {fileID: 1106026517}
   - {fileID: 19656014}
@@ -2250,7 +2250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 8
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
   enabledLocation: 0
@@ -2642,7 +2642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &833242035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,6 +2756,7 @@ MonoBehaviour:
   scaleMultiplier: 1.04
   darkenAmount: 0.1
   animationSpeed: 10
+  isPopupButton: 0
 --- !u!1 &933595105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,7 +3734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 5
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
   enabledLocation: 0
@@ -4405,7 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
   enabledLocation: 0
@@ -4954,7 +4955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 9
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
   enabledLocation: 0
@@ -6145,7 +6146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 6
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
   enabledLocation: 0

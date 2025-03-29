@@ -13,13 +13,13 @@ public class ConfirmationDialog : MonoBehaviour
     private void Start()
     {
         dialogPanel.SetActive(false);
-
         confirmButton.onClick.AddListener(OnConfirmClicked);
         cancelButton.onClick.AddListener(OnCancelClicked);
     }
 
     public void Show(string message)
     {
+        Debug.Log("Show popup!!!!!!!!!");
         messageText.text = message;
         CityManager.Instance.popupOpened = true;
         dialogPanel.SetActive(true);
