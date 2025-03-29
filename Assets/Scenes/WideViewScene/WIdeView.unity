@@ -3323,7 +3323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityPopulation: 1000
-  maxCityDaysAmount: 5
+  maxCityDaysAmount: 14
   dayCounterText: {fileID: 0}
   finalMessage: {fileID: 1822793179}
   popupOpened: 0

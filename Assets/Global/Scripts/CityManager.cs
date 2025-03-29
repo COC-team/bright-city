@@ -305,6 +305,10 @@ public class CityManager : MonoBehaviour
             // Generate a random event for the selected location
             Event randomEvent = GetRandomEventForLocation(randomLocation.type);
 
+            if (usedEvents.Count == 30)
+            {
+                usedEvents = new List<Event>();
+            }
             // Ensure event is not repeated
             if (!usedEvents.Contains(randomEvent))
             {
@@ -441,6 +445,19 @@ public class CityManager : MonoBehaviour
                     { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.Farm, 6 } } }
                 };
                 return farmEvents[UnityEngine.Random.Range(0, farmEvents.Count)];
+            case LocationType.University:
+                List<Event> universityEvents = new List<Event>
+                {
+                    new Event(EventType.SOME_LOCATIONS, "Professor Strike. Professors demand better salaries, halting university operations.") 
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 0 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Research Breakthrough. Scientists at the university make a major discovery, boosting technological progress.") 
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 5 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Government Funding. The university receives additional funding, improving education quality.") 
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, 3 } } },
+                    new Event(EventType.SOME_LOCATIONS, "Student Protest. Students rally for reforms, causing temporary disruptions in studies.") 
+                        { locationsEnergyModifier = new Dictionary<LocationType, int> { { LocationType.University, -2 } } }
+                };
+                return universityEvents[UnityEngine.Random.Range(0, universityEvents.Count)];
 
             default:
                 return new Event(EventType.NO_IMPACT, "No events available for this location.");
@@ -452,9 +469,14 @@ public class CityManager : MonoBehaviour
         enablingLocationsByDay = new Dictionary<int, LocationType>();
         enablingLocationsByDay[1] = LocationType.Hospital;
         enablingLocationsByDay[2] = LocationType.School;
-        enablingLocationsByDay[3] = LocationType.Club;
+        enablingLocationsByDay[3] = LocationType.Supermarket;
         enablingLocationsByDay[4] = LocationType.Cinema;
-        enablingLocationsByDay[5] = LocationType.Supermarket;
+        enablingLocationsByDay[5] = LocationType.Club;
+        enablingLocationsByDay[6] = LocationType.Factory;
+        enablingLocationsByDay[7] = LocationType.Casino;
+        enablingLocationsByDay[8] = LocationType.Farm;
+        enablingLocationsByDay[9] = LocationType.Park;
+        enablingLocationsByDay[10] = LocationType.University;
     }
     
     private void InitializeBaseMessagesByDay()
