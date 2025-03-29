@@ -90,7 +90,8 @@ public class CityManager : MonoBehaviour
             Debug.Log("Game is already over. Cannot finish day.");
             return;
         }
-        int actualEnergy = StationManager.Instance.energyAmount;
+        int actualEnergy = StationManager.Instance.GetEnergy();
+        StationManager.Instance.ClearCards();
         int neededEnergy = 0;
         foreach (var location in city.getEnabledLocations())
         {
@@ -98,6 +99,7 @@ public class CityManager : MonoBehaviour
         }
         
         previousDayEnergyDifference = Math.Abs(actualEnergy - neededEnergy);
+        Debug.Log("Finished day required energy: " + neededEnergy);
         if (previousDayEnergyDifference != 0)
         {
             city.population -= previousDayEnergyDifference;
