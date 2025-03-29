@@ -10,6 +10,7 @@ public class StationManager  : MonoBehaviour
     private DynamicList cardDeck;
     private DynamicList cardsInUse;
     public GameObject cardPrefab;
+    private Dictionary<int, List<GameObject>> cardsPerDay = new Dictionary<int, List<GameObject>>();
 
     private int energyAmount = 0;
 
@@ -39,6 +40,7 @@ public class StationManager  : MonoBehaviour
         cardsInUse.DestroyAllItems();
     }
     
+    
     public List<Event> GetEvents()
     {
         List<Event> events = new List<Event>();
@@ -64,6 +66,40 @@ public class StationManager  : MonoBehaviour
             }
         }
         return producedPower;
+    }
+
+    void InitCards()
+    {
+        List<GameObject> cards = new List<GameObject>();
+        cards.Add(CreateCard("5 power", "Gives 5 power to city", 5));
+        cards.Add(CreateCard("10 power", "Gives 5 power to city", 10));
+        cards.Add(CreateCard("15 power", "Gives 5 power to city", 15));
+        cards.Add(CreateCard("20 power", "Gives 5 power to city", 20));
+        
+        cardsPerDay.Add(0, cards);
+    }
+
+    void AddCardsOfDay(int day)
+    {
+        if (cardsPerDay.ContainsKey(day))
+        {
+            foreach (var card in cardsPerDay)
+            {
+                Debug.Log("dsfds");
+            }
+        }
+    }
+
+    GameObject CreateCard(string cardName, string description, int electricity = 0, Event cardEvent = null)
+    {
+        var cardObject = Instantiate(cardPrefab, cardDeckPanel.transform);
+        cardObject.SetActive(false);
+        var card = cardObject.GetComponent<Card>();
+        card.electricity = electricity;
+        card.cityEvent = cardEvent;
+        card.name = cardName;
+        card.cardDescription = description;
+        return cardObject;
     }
     
     // public void AddEnergy(int amount)

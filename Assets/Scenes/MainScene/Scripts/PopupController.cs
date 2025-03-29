@@ -15,14 +15,12 @@ public class PopupController : MonoBehaviour
 
     public void ShowPopup(string text)
     {
-        Debug.Log("ShowPopup");
         popupPanel.SetActive(true);
         SetText(text);
     }
 
     private void ClosePopup()
     {
-        Debug.Log("ClosePopup");
         popupPanel.SetActive(false);
         SetText(string.Empty);
     }

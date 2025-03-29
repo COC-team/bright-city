@@ -9,7 +9,13 @@ public class NewsManager : MonoBehaviour
 
     void Start()
     {
-        popupController = FindFirstObjectByType<PopupController>();
+        PopupController[] controllers = FindObjectsOfType<PopupController>(true);
+        foreach (var controller in controllers)
+        {
+            popupController = controller;
+
+        }
+        
     }
     private void Awake()
     {
