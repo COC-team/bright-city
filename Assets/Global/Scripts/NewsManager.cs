@@ -75,6 +75,24 @@ public class NewsManager : MonoBehaviour
             component.ShowPopup(newsText);
         }
     }
+
+    public void ShowFirst(string message)
+    {
+        GameObject targetObject = FindInactiveGameObject("Popup");
+
+        // Check if the GameObject was found
+        if (targetObject == null)
+        {
+            Debug.LogError("Popup GameObject not found in the scene.");
+            return;
+        }
+        if (targetObject != null)
+        {
+            // Get the component from the GameObject
+            PopupController component = targetObject.GetComponent<PopupController>();
+            component.ShowPopup(message);
+        }
+    }
     
     public GameObject FindInactiveGameObject(string name)
     {

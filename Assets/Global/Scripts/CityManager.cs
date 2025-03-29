@@ -48,7 +48,16 @@ public class CityManager : MonoBehaviour
         UpdateEnergyAmountUI();
         UpdateDayCounterUI();
         UpdatePopulationAmountUI();
+        
+        StartCoroutine(WaitAndShowFirst());
     }
+    
+    IEnumerator WaitAndShowFirst()
+    {
+        yield return new WaitForSeconds(1f);
+        NewsManager.Instance.ShowFirst("DO NOT SKIP!\n\nWelcome new manager!\n\nThis is your first day in the city. You will be responsible for managing the energy supply and ensuring the well-being of the citizens. Good luck! Visit the Power Station and the Town to get started.");
+    }
+
     
     private IEnumerator WaitForSceneLoaderAndLoadScene()
     {
@@ -474,7 +483,7 @@ public class CityManager : MonoBehaviour
     private void InitializeBaseMessagesByDay()
     {
         baseMessageByDay = new Dictionary<int, string>();
-        baseMessageByDay[1] = "Welcome to the city! Day 1.";
+        baseMessageByDay[1] = "Day 1: Let's get started.";
         baseMessageByDay[2] = "Day 2: Things are getting interesting.";
         baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
         baseMessageByDay[4] = "Day 4: The city is evolving, stay vigilant.";
