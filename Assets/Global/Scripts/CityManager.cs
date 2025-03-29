@@ -281,19 +281,23 @@ public class CityManager : MonoBehaviour
         // Select number of events (0 to 3)
         int eventCount;
         int randomValue = UnityEngine.Random.Range(0, 100);
-        if (city.currentDay <= 5)
+        if (city.currentDay == 0)
         {
-            if (randomValue < 15) eventCount = 0;      // 15%
-            else if (randomValue < 25) eventCount = 1; // 25%
+            eventCount = 0;
+        }
+        else if (city.currentDay <= 5 )
+        {
+            if (randomValue < 10) eventCount = 0;      // 15%
+            else if (randomValue < 40) eventCount = 1; // 25%
             else if (randomValue < 45) eventCount = 2; // 45%
             else eventCount = 3;                       // 15%
         }
         else
         {
-            if (randomValue < 0) eventCount = 0;      // 15%
-            else if (randomValue < 0) eventCount = 1; // 25%
-            else if (randomValue < 0) eventCount = 2; // 45%
-            else eventCount = 3;                       // 15%
+            if (randomValue < 10) eventCount = 0;      // 15%
+            else if (randomValue < 20) eventCount = 1; // 25%
+            else if (randomValue < 40) eventCount = 2; // 45%
+            else eventCount = 30;                       // 15%
         }
 
 
