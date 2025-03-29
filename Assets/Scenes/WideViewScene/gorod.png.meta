@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gorod_0: -5276616147581120347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      electrostation_0: 2047800183815118767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
