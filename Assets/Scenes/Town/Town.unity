@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 384381883}
   - component: {fileID: 384381882}
   - component: {fileID: 384381886}
+  - component: {fileID: 384381887}
   m_Layer: 0
   m_Name: Dom (1)
   m_TagString: Untagged
@@ -518,7 +519,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 384381887}
+  popupText: This building will be enabled soon.
+--- !u!114 &384381887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384381880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  baseEnergyAmount: 10
+  currentDayEnergyAmount: 0
+  enabled: 0
 --- !u!1 &427825686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1230,7 @@ GameObject:
   - component: {fileID: 568231211}
   - component: {fileID: 568231214}
   - component: {fileID: 568231210}
+  - component: {fileID: 568231215}
   m_Layer: 0
   m_Name: Clab
   m_TagString: Untagged
@@ -1422,7 +1441,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 568231215}
+  popupText: This building will be enabled soon.
+--- !u!114 &568231215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568231208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  baseEnergyAmount: 20
+  currentDayEnergyAmount: 0
+  enabled: 1
 --- !u!1 &584220611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,9 +1830,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  baseEnergyAmount: 0
+  baseEnergyAmount: 20
   currentDayEnergyAmount: 0
-  enabled: 0
+  enabled: 1
 --- !u!114 &720736668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1810,7 +1846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 720736667}
+  popupText: This building will be enabled soon.
 --- !u!1 &870734404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1998,7 @@ GameObject:
   - component: {fileID: 1080375298}
   - component: {fileID: 1080375297}
   - component: {fileID: 1080375301}
+  - component: {fileID: 1080375302}
   m_Layer: 0
   m_Name: Dom (3)
   m_TagString: Untagged
@@ -2210,7 +2248,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 1080375302}
+  popupText: This building will be enabled soon.
+--- !u!114 &1080375302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080375295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  baseEnergyAmount: 10
+  currentDayEnergyAmount: 0
+  enabled: 0
 --- !u!1 &1302295858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2495,7 @@ GameObject:
   - component: {fileID: 1366544168}
   - component: {fileID: 1366544167}
   - component: {fileID: 1366544171}
+  - component: {fileID: 1366544172}
   m_Layer: 0
   m_Name: Dom (2)
   m_TagString: Untagged
@@ -2689,7 +2745,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 1366544172}
+  popupText: This building will be enabled soon.
+--- !u!114 &1366544172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366544165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  baseEnergyAmount: 10
+  currentDayEnergyAmount: 0
+  enabled: 0
 --- !u!1 &1504494927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,6 +2913,7 @@ GameObject:
   - component: {fileID: 1549777046}
   - component: {fileID: 1549777047}
   - component: {fileID: 1549777048}
+  - component: {fileID: 1549777049}
   m_Layer: 0
   m_Name: Dom
   m_TagString: Untagged
@@ -3089,7 +3163,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 1549777049}
+  popupText: This building will be enabled soon.
+--- !u!114 &1549777049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549777040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  baseEnergyAmount: 10
+  currentDayEnergyAmount: 0
+  enabled: 0
 --- !u!1 &1671209213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,6 +3195,7 @@ GameObject:
   - component: {fileID: 1671209216}
   - component: {fileID: 1671209219}
   - component: {fileID: 1671209215}
+  - component: {fileID: 1671209220}
   m_Layer: 0
   m_Name: Cinema
   m_TagString: Untagged
@@ -3332,7 +3424,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 1671209220}
+  popupText: This building will be enabled soon.
+--- !u!114 &1671209220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671209213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  baseEnergyAmount: 20
+  currentDayEnergyAmount: 0
+  enabled: 0
 --- !u!1 &1709436141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,6 +3956,7 @@ GameObject:
   - component: {fileID: 1886728713}
   - component: {fileID: 1886728712}
   - component: {fileID: 1886728716}
+  - component: {fileID: 1886728717}
   m_Layer: 0
   m_Name: School
   m_TagString: Untagged
@@ -3863,7 +3973,7 @@ Transform:
   m_GameObject: {fileID: 1886728710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72, y: -428, z: 0}
+  m_LocalPosition: {x: 17, y: 25, z: 0}
   m_LocalScale: {x: 39.89, y: 39.89, z: 39.89}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4096,7 +4206,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupController: {fileID: 1842104842}
-  popupText: nothing
+  location: {fileID: 1886728717}
+  popupText: This building will be enabled soon.
+--- !u!114 &1886728717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886728710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6c57e5769a8ae4db6328c10ecbb37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  baseEnergyAmount: 20
+  currentDayEnergyAmount: 0
+  enabled: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
