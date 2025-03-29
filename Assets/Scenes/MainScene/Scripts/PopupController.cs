@@ -10,6 +10,7 @@ public class PopupController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        ClosePopup();
         closeButton.onClick.AddListener(ClosePopup);
     }
 
@@ -19,7 +20,7 @@ public class PopupController : MonoBehaviour
         SetText(text);
     }
 
-    private void ClosePopup()
+    public void ClosePopup()
     {
         popupPanel.SetActive(false);
         SetText(string.Empty);

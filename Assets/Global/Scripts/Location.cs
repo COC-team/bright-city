@@ -1,6 +1,10 @@
 using System;
+using System.Text;
+using System;
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.Rendering;
 
 public class Location : MonoBehaviour
 {
@@ -31,6 +35,17 @@ public class Location : MonoBehaviour
     {
         enabledLocation = true;
     }
+
+    public bool IsLocationEnabled()
+    {
+        return enabledLocation;
+    }
+
+    public String getLocationString()
+    {
+        return "Building name: " + type + 
+               "\nBase Energy Amount: " + baseEnergyAmount;
+    }
 }
 
 public enum LocationType
@@ -45,4 +60,5 @@ public enum LocationType
     Casino,
     Park,
     Farm,
+    CommonHouse,
 }
