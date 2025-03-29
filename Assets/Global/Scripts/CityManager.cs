@@ -10,6 +10,9 @@ public class CityManager : MonoBehaviour
 
     public int cityPopulation;
     public int maxCityDaysAmount;
+    
+    public bool firstPowerStation = false;
+    public bool firstTown = false;
 
     private bool isGameOver = false;
     public bool popupOpened = false;
