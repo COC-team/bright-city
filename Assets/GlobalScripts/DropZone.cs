@@ -38,6 +38,7 @@ public class DropZone : MonoBehaviour
             from.RemoveItem(card.cardInfo);
             card.card.transform.SetParent(toPanel.transform);
             card.transform.position = transform.position;
+            CityManager.Instance.UpdateEnergyAmountUI();
             return true;
         }
 

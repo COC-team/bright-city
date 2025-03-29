@@ -634,8 +634,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 7
-  baseEnergyAmount: 20
+  baseEnergyAmount: 25
   currentDayEnergyAmount: 0
+  description: "Betting big on pulling the legendary \u201CI\u2019m-not-broke\u201D
+    card"
   enabledLocation: 0
 --- !u!114 &358782201
 MonoBehaviour:
@@ -664,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 1089288859}
 --- !u!114 &358782203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,8 +1337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.06, y: 3.94}
-  m_SizeDelta: {x: 8.52, y: 2.25606}
+  m_AnchoredPosition: {x: -0.06, y: 4.01}
+  m_SizeDelta: {x: 9.6, y: 2.25606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536191606
 MonoBehaviour:
@@ -1358,7 +1360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shop
+  m_text: Supermarket
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1579,7 +1581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 771495608}
 --- !u!114 &568231212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,8 +1679,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
-  baseEnergyAmount: 20
+  baseEnergyAmount: 30
   currentDayEnergyAmount: 0
+  description: Where you go to accidentally create 5-second viral dance trends
   enabledLocation: 0
 --- !u!1 &698864750
 GameObject:
@@ -1969,7 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 213544873}
 --- !u!114 &720736665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,8 +2055,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  baseEnergyAmount: 20
+  baseEnergyAmount: 60
   currentDayEnergyAmount: 0
+  description: Where doctors prescribe TikTok dances for quicker recovery
   enabledLocation: 0
 --- !u!114 &720736668
 MonoBehaviour:
@@ -2251,8 +2255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 8
-  baseEnergyAmount: 20
+  baseEnergyAmount: 10
   currentDayEnergyAmount: 0
+  description: "Nature\u2019s Wi-Fi-free zone, except for the dog memes"
   enabledLocation: 0
 --- !u!114 &744599010
 MonoBehaviour:
@@ -3202,8 +3207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -29.060059, y: 122.04401}
-  m_SizeDelta: {x: -2830.98, y: -1611.63}
+  m_AnchoredPosition: {x: 92.315, y: 96}
+  m_SizeDelta: {x: -2588.23, y: -1576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085518364
 MonoBehaviour:
@@ -3225,7 +3230,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: fcfvcytgfftggt
+  m_text: ygvybgvvbgvbgvbygvygv guvgtvtgvtft6fg tvtfgt6frt6frtftfrtfr6t bgygtyg7t6frt6fr6f
+    ytgt6ft6rfrt6 tgtfgt6ftr6hbnhbbbbgy ygytgytgtygygygyg6yg6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 384c69965e9482247b175396a6ebad91, type: 2}
   m_sharedMaterial: {fileID: 8331384636377243729, guid: 384c69965e9482247b175396a6ebad91, type: 2}
@@ -3252,8 +3258,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3735,8 +3741,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
-  baseEnergyAmount: 20
+  baseEnergyAmount: 80
   currentDayEnergyAmount: 0
+  description: Industrial beats dropping harder than your productivity
   enabledLocation: 0
 --- !u!114 &1272133084
 MonoBehaviour:
@@ -3765,7 +3772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 933595107}
 --- !u!114 &1272133086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4409,6 +4416,7 @@ MonoBehaviour:
   type: 2
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: Grocery shopping, but make it a speedrun challenge
   enabledLocation: 0
 --- !u!114 &1554679136
 MonoBehaviour:
@@ -4437,7 +4445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 536191606}
 --- !u!114 &1554679138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,7 +4675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 794991354}
 --- !u!114 &1671209217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4765,8 +4773,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  baseEnergyAmount: 20
+  baseEnergyAmount: 25
   currentDayEnergyAmount: 0
+  description: Where the popcorn costs more than your monthly subscription services
   enabledLocation: 0
 --- !u!1 &1744350803
 GameObject:
@@ -4958,6 +4967,7 @@ MonoBehaviour:
   type: 9
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
+  description: IRL Stardew Valley, but with less romance and more cow drama
   enabledLocation: 0
 --- !u!114 &1828884657
 MonoBehaviour:
@@ -5219,7 +5229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 2070141529}
 --- !u!114 &1886728713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5448,8 +5458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  baseEnergyAmount: 20
+  baseEnergyAmount: 30
   currentDayEnergyAmount: 0
+  description: The ultimate collab hub where homework influencers thrive
   enabledLocation: 0
 --- !u!1 &1950901725
 GameObject:
@@ -6147,8 +6158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
-  baseEnergyAmount: 20
+  baseEnergyAmount: 30
   currentDayEnergyAmount: 0
+  description: Where degrees come with free existential crises and memes
   enabledLocation: 0
 --- !u!114 &2082932939
 MonoBehaviour:
@@ -6177,7 +6189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30085fe88eb6947a536c1350b248f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 0}
+  label: {fileID: 1383161500}
 --- !u!114 &2082932941
 MonoBehaviour:
   m_ObjectHideFlags: 0
