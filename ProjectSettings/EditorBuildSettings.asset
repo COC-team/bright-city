@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PowerStation/PowerStation.unity
     guid: d178023212f00674e818abc42d564b22
+  - enabled: 1
+    path: Assets/Scenes/WinLose/Lose.unity
+    guid: c67369a3c8dda994e83baeec4e2ce2ec
+  - enabled: 1
+    path: Assets/Scenes/WinLose/Win.unity
+    guid: e391d05c743e4882b8dd173e5b0fd4d0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
