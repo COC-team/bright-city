@@ -23,9 +23,9 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void LoadNewScene(string sceneName)
+    public void LoadNewScene(string sceneName, bool forceLoad = false)
     {
-        if (CityManager.Instance.popupOpened)
+        if (CityManager.Instance.popupOpened && !forceLoad)
         {
             // Если попап открыт, не обновляй эффект
             return;
