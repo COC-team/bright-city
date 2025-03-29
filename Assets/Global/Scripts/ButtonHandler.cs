@@ -7,6 +7,7 @@ public class ButtonClickHandler : MonoBehaviour
     private Color originalColor;
     public Color highlightColor = Color.red; // Цвет выделения
     public string sceneToLoad = "NextScene"; // Название сцены для загрузки
+    public bool shouldShutdown = false; // Флаг для проверки, нужно ли завершить игру
 
     void Start()
     {
@@ -26,6 +27,23 @@ public class ButtonClickHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        SceneManager.LoadScene(sceneToLoad); // Загружаем сцену при клике
+        if (shouldShutdown)
+        {
+            QuitGame(); // Если установлен флаг shouldShutdown, вызываем метод завершения игры
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneToLoad); // Загружаем сцену при клике
+        }
+    }
+
+    // Метод для завершения игры
+    private void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; // Останавливает игру в редакторе
+#else
+            Application.Quit(); // Завершаем игру, если в сборке
+#endif
     }
 }
