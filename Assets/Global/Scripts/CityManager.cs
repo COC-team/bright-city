@@ -152,10 +152,16 @@ public class CityManager : MonoBehaviour
             baseMessage = baseMessageByDay[city.currentDay];
         }
         
+        eventsByDay[city.currentDay] = new List<Event>();
+        
         if (eventsByDay.ContainsKey(city.currentDay))
         {
             Debug.Log($"Day {city.currentDay}: Events Occurring");
-            var events = eventsByDay[city.currentDay];
+            if (city.currentDay == 0)
+            {
+                NewsManager.Instance.ShowNews(baseMessage, new List<Event>(), previousDayEnergyDifference, unlockedLocation);
+            }
+            var events = GenerateRandomEventsForDay();
             NewsManager.Instance.ShowNews(baseMessage, events, previousDayEnergyDifference, unlockedLocation);
             city.ApplyEvents(events);
         }
@@ -258,16 +264,18 @@ public class CityManager : MonoBehaviour
         
         Event chillDay = new Event(EventType.NO_IMPACT, "Chill day, no events.");
         
-        eventsByDay[1] = new List<Event> { chillDay };
-        eventsByDay[2] = GenerateRandomEventsForDay();
-        eventsByDay[3] = new List<Event> { chillDay };
+        /*eventsByDay[1] = new List<Event> { chillDay };
+        eventsByDay[2] = GenerateRandomEventsForDay();*/
+        /*eventsByDay[3] = new List<Event> { chillDay };
         eventsByDay[4] = new List<Event> { chillDay };
-        eventsByDay[5] = new List<Event> { chillDay };
+        eventsByDay[5] = new List<Event> { chillDay };*/
     }
     
     private List<Event> GenerateRandomEventsForDay()
     {
         List<Location> enabledLocations = city.getEnabledLocations();
+        Debug.Log("Generating random events");
+        Debug.Log(enabledLocations.Count);
         List<Event> possibleEvents = new List<Event>();
 
         // Select random number of events (0 to 3)
