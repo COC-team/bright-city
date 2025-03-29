@@ -37,7 +37,7 @@ public class NewsManager : MonoBehaviour
     {
         Debug.Log("Showing news...");
         string newsText = baseMessage + "\n";
-        newsText += $"Previous day statistics:\n - used energy {actualEnergy}/{neededEnergy}\n";
+        newsText += $"Previous day statistics:\n - used energy {actualEnergy} / town need amount {neededEnergy}\n";
         if (previousDayEnergyDifference != 0)
         {
             newsText += $"- people left the town: {previousDayEnergyDifference}\n";
