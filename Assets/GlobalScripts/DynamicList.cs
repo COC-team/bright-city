@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DynamicList : MonoBehaviour
 {
-    public GameObject itemPrefab;  // Assign item prefab in Inspector
     public Transform contentPanel; // Assign Panel (with Vertical Layout Group)
     private List<Card> items = new List<Card>();
 

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Card name
+  m_text: Electricity
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 7715407505278249870}
   - component: {fileID: 2364036393589389766}
   - component: {fileID: 6737636676858975929}
+  - component: {fileID: 6693480601550681036}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -294,6 +295,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 274.45667, y: 418.92145}
   m_EdgeRadius: 0
+--- !u!114 &6693480601550681036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088799576466137103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ef01918d05f8940878d7f90a1eeb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverCursor: {fileID: 2800000, guid: 6aae3730ec22dfa4a933ec0a11123954, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 45d211a0038b5f04a9609103e92b7561, type: 3}
+  card: {fileID: 7088799576466137103}
+  electricity: 0
+  cardName: Default name
+  cardDescription: Defaul description
 --- !u!1 &8235788755298979092
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Card description
+  m_text: 5 power
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
