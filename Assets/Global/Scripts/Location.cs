@@ -1,6 +1,9 @@
 using System;
 using System.Text;
+using System;
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Rendering;
 
 public class Location : MonoBehaviour
@@ -8,7 +11,7 @@ public class Location : MonoBehaviour
     public LocationType type;
     public int baseEnergyAmount;
     public int currentDayEnergyAmount;
-    public bool enabled = false;
+    [FormerlySerializedAs("enabled")] public bool enabledLocation = false;
     
     public Location(LocationType type, int baseEnergyAmount = 0)
     {
@@ -20,6 +23,7 @@ public class Location : MonoBehaviour
     public void ApplyEnergyModifier(int energyModifier)
     {
         currentDayEnergyAmount += energyModifier;
+        currentDayEnergyAmount = Math.Min(currentDayEnergyAmount, 0);
     }
     
     public void ResetDayEnergy()
@@ -29,12 +33,12 @@ public class Location : MonoBehaviour
     
     public void EnableLocation()
     {
-        enabled = true;
+        enabledLocation = true;
     }
 
     public bool IsLocationEnabled()
     {
-        return enabled;
+        return enabledLocation;
     }
 
     public String getLocationString()

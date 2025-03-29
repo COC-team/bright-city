@@ -5,8 +5,18 @@ public class NewsManager : MonoBehaviour
 {
     public static NewsManager Instance { get; private set; }  // Singleton Instance
 
-    public PopupController popupController;
+    private PopupController popupController;
 
+    void Start()
+    {
+        PopupController[] controllers = FindObjectsOfType<PopupController>(true);
+        foreach (var controller in controllers)
+        {
+            popupController = controller;
+
+        }
+        
+    }
     private void Awake()
     {
         if (Instance == null)
@@ -35,7 +45,7 @@ public class NewsManager : MonoBehaviour
         }
         else
         {
-            newsText = "Today's news:\n";
+            newsText += "Today's news:\n";
             foreach (var eventItem in events)
             {
                 newsText += $"  - {eventItem.description}\n";

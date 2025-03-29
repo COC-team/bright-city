@@ -35,4 +35,18 @@ public class DynamicList : MonoBehaviour
             items.Remove(item);
         }
     }
+
+    public List<Card> GetItems()
+    {
+        return items;
+    }
+
+    public void DestroyAllItems()
+    {
+        foreach (var card in items)
+        {
+            Destroy(card);
+        }
+        items.Clear();
+    }
 }
