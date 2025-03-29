@@ -118,6 +118,17 @@ public class CityManager : MonoBehaviour
     public void SwitchNextDay()
     {
         city.SwitchNextDay();
+        if (city.IsLastDayPassed())
+        {
+            WinGame();
+            Debug.Log("All days have passed.");
+            return;
+        }
+        else
+        {
+            Debug.Log("Day " + city.currentDay + " has passed.");
+        }
+        
         UpdateDayCounterUI();
         var unlockedLocation = EnableCurrentDayLocation();
 
@@ -136,16 +147,6 @@ public class CityManager : MonoBehaviour
         }
 
         LogAllLocations();
-        
-        if (city.IsLastDayPassed())
-        {
-            WinGame();
-            Debug.Log("All days have passed.");
-        }
-        else
-        {
-            Debug.Log("Day " + city.currentDay + " has passed.");
-        }
     }
     
     private void LogAllLocations()
@@ -191,14 +192,21 @@ public class CityManager : MonoBehaviour
     
     private void UpdateFinalMessageUI(string message)
     {
+        Debug.Log("Updating final message UI");
         if (finalMessage != null)
         {
+            Debug.Log("Final message text is not null");
             finalMessage.text = message;  // Update text here
         }
     }
 
     private LocationType? EnableCurrentDayLocation()
     {
+        if (!enablingLocationsByDay.ContainsKey(city.currentDay))
+        {
+            Debug.LogError($"No location to enable for day {city.currentDay}");
+            return null;
+        }
         LocationType locationTypeToEnable = enablingLocationsByDay[city.currentDay];
         foreach (var location in city.locations)
         {
@@ -206,7 +214,6 @@ public class CityManager : MonoBehaviour
             {
                 location.EnableLocation();
                 return location.type;
-                Debug.Log($"Location {locationTypeToEnable} enabled for day {city.currentDay}");
             }
         }
 
