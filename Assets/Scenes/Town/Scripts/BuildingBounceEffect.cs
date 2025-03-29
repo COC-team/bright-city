@@ -38,6 +38,11 @@ public class BuildingBounceEffect : MonoBehaviour
 
     void Update()
     {
+        if (CityManager.Instance.popupOpened)
+        {
+            // Если попап открыт, не обновляй эффект
+            return;
+        }
         if (location == null || location.IsLocationEnabled()) // Проверка перед обновлением эффекта
         {
             if (isHovered)

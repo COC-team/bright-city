@@ -25,6 +25,11 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNewScene(string sceneName)
     {
+        if (CityManager.Instance.popupOpened)
+        {
+            // Если попап открыт, не обновляй эффект
+            return;
+        }
         if (sceneName == currentActiveScene)
         {
             Debug.LogWarning($"Scene {sceneName} is already the active scene.");

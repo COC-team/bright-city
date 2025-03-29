@@ -15,6 +15,11 @@ public class SpriteClickHandler : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (CityManager.Instance.popupOpened)
+        {
+            // Если попап открыт, не обновляй эффект
+            return;
+        }
         spriteRenderer.color = highlightColor; // Change color on hover
     }
 

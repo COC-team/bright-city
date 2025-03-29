@@ -17,6 +17,11 @@ public class NextDayButton : MonoBehaviour
     // This method is called when the button is clicked
     private void OnButtonClicked()
     {
+        if (CityManager.Instance.popupOpened)
+        {
+            // Если попап открыт, не обновляй эффект
+            return;
+        }
         CityManager.Instance.FinishDay();
     }
 

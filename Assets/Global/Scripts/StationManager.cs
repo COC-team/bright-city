@@ -37,6 +37,7 @@ public class StationManager  : MonoBehaviour
     public void ClearCards()
     {
         // cardDeck.DestroyAllItems();
+        return; // TODO: Remove this
         cardsInUse.DestroyAllItems();
     }
     
@@ -56,6 +57,7 @@ public class StationManager  : MonoBehaviour
     }
     public int GetEnergy()
     {
+        return 0; // TODO: Remove this
         int producedPower = 0;
         List<Card> usedCards = cardsInUse.GetItems();
         foreach (var usedCard in usedCards)

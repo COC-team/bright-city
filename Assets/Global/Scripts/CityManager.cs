@@ -119,7 +119,7 @@ public class CityManager : MonoBehaviour
     {
         city.SwitchNextDay();
         UpdateDayCounterUI();
-        EnableCurrentDayLocation();
+        var unlockedLocation = EnableCurrentDayLocation();
 
         UpdateEnergyAmountUI();
         
@@ -127,12 +127,12 @@ public class CityManager : MonoBehaviour
         {
             Debug.Log($"Day {city.currentDay}: Events Occurring");
             var events = eventsByDay[city.currentDay];
-            NewsManager.Instance.ShowNews(events, previousDayEnergyDifference);
+            NewsManager.Instance.ShowNews(events, previousDayEnergyDifference, unlockedLocation);
             city.ApplyEvents(events);
         }
         else
         {
-            NewsManager.Instance.ShowNews(null, previousDayEnergyDifference);
+            NewsManager.Instance.ShowNews(null, previousDayEnergyDifference, unlockedLocation);
         }
 
         LogAllLocations();
@@ -197,7 +197,7 @@ public class CityManager : MonoBehaviour
         }
     }
 
-    private void EnableCurrentDayLocation()
+    private LocationType? EnableCurrentDayLocation()
     {
         LocationType locationTypeToEnable = enablingLocationsByDay[city.currentDay];
         foreach (var location in city.locations)
@@ -205,9 +205,12 @@ public class CityManager : MonoBehaviour
             if (location.type == locationTypeToEnable)
             {
                 location.EnableLocation();
+                return location.type;
                 Debug.Log($"Location {locationTypeToEnable} enabled for day {city.currentDay}");
             }
         }
+
+        return null;
     }
     
     private void InitializeEvents()

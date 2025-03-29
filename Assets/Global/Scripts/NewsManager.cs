@@ -32,13 +32,18 @@ public class NewsManager : MonoBehaviour
         }
     }
 
-    public void ShowNews(List<Event> events, int previousDayEnergyDifference)
+    public void ShowNews(List<Event> events, int previousDayEnergyDifference, LocationType? locationType)
     {
         Debug.Log("Showing news...");
         string newsText = "Good morning citizens!\n";
         if (previousDayEnergyDifference != 0)
         {
             newsText += $"Yesterday, died {previousDayEnergyDifference} citizens. :D\n";
+        }
+        
+        if (locationType != null)
+        {
+            newsText += $"Today you unlocked: {locationType}.\n";
         }
         
         if (events == null || events.Count == 0)
