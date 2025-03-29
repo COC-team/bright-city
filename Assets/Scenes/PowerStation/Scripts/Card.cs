@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Scenes.PowerStation.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
