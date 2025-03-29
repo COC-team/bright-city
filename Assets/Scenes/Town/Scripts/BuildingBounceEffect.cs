@@ -25,7 +25,7 @@ public class BuildingBounceEffect : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (location != null && location.IsLocationEnabled()) // Проверка перед включением эффекта
+        if (location == null || location.IsLocationEnabled()) // Проверка перед включением эффекта
         {
             isHovered = true;
         }
@@ -38,7 +38,7 @@ public class BuildingBounceEffect : MonoBehaviour
 
     void Update()
     {
-        if (location.IsLocationEnabled()) // Проверка перед обновлением эффекта
+        if (location == null || location.IsLocationEnabled()) // Проверка перед обновлением эффекта
         {
             if (isHovered)
                 transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * bounceSpeed);

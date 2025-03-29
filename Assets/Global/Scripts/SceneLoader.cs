@@ -65,7 +65,11 @@ public class SceneLoader : MonoBehaviour
         };
 
         // Wait for the loading to complete
-        yield return new WaitUntil(() => loadOperation.isDone);
+        yield return new WaitUntil(() =>
+        {
+            return loadOperation.isDone;
+        });
+        CityManager.Instance.UpdateDayCounterUI();
     }
     
     public void LoadSceneAndCollectLocations(string sceneToLoad)

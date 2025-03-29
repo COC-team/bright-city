@@ -42,6 +42,6 @@ public class NewsManager : MonoBehaviour
             }            
         }
         
-        popupController.ShowPopup(newsText);
+        // popupController.ShowPopup(newsText);
     }
 }

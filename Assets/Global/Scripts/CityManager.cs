@@ -62,8 +62,6 @@ public class CityManager : MonoBehaviour
 
     private void Update()
     {
-        LogAllLocations();
-
         if (isGameOver)
         {
             return;
@@ -110,11 +108,11 @@ public class CityManager : MonoBehaviour
             city.population -= previousDayEnergyDifference;
         }
         
-        if (city.population <= 0)
-        {
-            LooseGame();
-            return;
-        }
+        // if (city.population <= 0)
+        // {
+        //     LooseGame();
+        //     return;
+        // }
 
         SwitchNextDay();
     }
@@ -158,11 +156,23 @@ public class CityManager : MonoBehaviour
         }
     }
     
-    private void UpdateDayCounterUI()
+    public void UpdateDayCounterUI()
     {
-        if (dayCounterText != null)
+        // Debug.Log("Updating day counter UI");
+        // if (dayCounterText != null)
+        // {
+        //     Debug.Log("Day counter text is not null");
+        //     dayCounterText.text = "Day: " + city.currentDay;  // Update text here
+        // }
+        //
+        GameObject targetObject = GameObject.Find("DaysCounter");
+
+        // Check if the GameObject was found
+        if (targetObject != null)
         {
-            dayCounterText.text = "Day: " + city.currentDay;  // Update text here
+            // Get the component from the GameObject
+            TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
+            component.text = "Day: " + city.currentDay;  // Update text here
         }
     }
     
