@@ -272,17 +272,17 @@ public class CityManager : MonoBehaviour
         }
         else if (city.currentDay <= 5 )
         {
-            if (randomValue < 10) eventCount = 0;      // 15%
-            else if (randomValue < 40) eventCount = 1; // 25%
-            else if (randomValue < 45) eventCount = 2; // 45%
+            if (randomValue < 20) eventCount = 0;      // 15%
+            else if (randomValue < 60) eventCount = 1; // 25%
+            else if (randomValue < 95) eventCount = 2; // 45%
             else eventCount = 3;                       // 15%
         }
         else
         {
             if (randomValue < 10) eventCount = 0;      // 15%
-            else if (randomValue < 20) eventCount = 1; // 25%
-            else if (randomValue < 40) eventCount = 2; // 45%
-            else eventCount = 30;                       // 15%
+            else if (randomValue < 25) eventCount = 1; // 25%
+            else if (randomValue < 70) eventCount = 2; // 45%
+            else eventCount = 3;                       // 15%
         }
 
 
