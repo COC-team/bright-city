@@ -5,8 +5,12 @@ public class NewsManager : MonoBehaviour
 {
     public static NewsManager Instance { get; private set; }  // Singleton Instance
 
-    public PopupController popupController;
+    private PopupController popupController;
 
+    void Start()
+    {
+        popupController = FindFirstObjectByType<PopupController>();
+    }
     private void Awake()
     {
         if (Instance == null)

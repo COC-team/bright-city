@@ -1,11 +1,24 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StationManager  : MonoBehaviour
 {
     public static StationManager Instance { get; private set; }  // Singleton Instance
+    public GameObject cardDeckPanel;
+    public GameObject cardsInUsePanel;
+    private DynamicList cardDeck;
+    private DynamicList cardsInUse;
+    public GameObject cardPrefab;
 
-    public int energyAmount = 0;
-    
+    private int energyAmount = 0;
+
+    private void Start()
+    {
+        cardDeck = cardDeckPanel.GetComponent<DynamicList>();
+        cardsInUse = cardsInUsePanel.GetComponent<DynamicList>();
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -19,23 +32,56 @@ public class StationManager  : MonoBehaviour
             return;
         }
     }
-    
-    public void AddEnergy(int amount)
+
+    public void ClearCards()
     {
-        energyAmount += amount;
+        // cardDeck.DestroyAllItems();
+        cardsInUse.DestroyAllItems();
     }
     
-    public void RemoveEnergy(int amount)
+    public List<Event> GetEvents()
     {
-        energyAmount -= amount;
-        if (energyAmount < 0)
+        List<Event> events = new List<Event>();
+        foreach (var card in cardsInUse.GetItems())
         {
-            energyAmount = 0;
+            if (card.electricity == 0)
+            {
+                events.Add(card.cityEvent);
+            }
         }
+
+        return events;
+    }
+    public int GetEnergy()
+    {
+        int producedPower = 0;
+        List<Card> usedCards = cardsInUse.GetItems();
+        foreach (var usedCard in usedCards)
+        {
+            if (usedCard.electricity > 0)
+            {
+                producedPower += usedCard.electricity;
+            }
+        }
+        return producedPower;
     }
     
-    public void ResetEnergy()
-    {
-        energyAmount = 0;
-    }
+    // public void AddEnergy(int amount)
+    // {
+    //     energyAmount += amount;
+    // }
+    //
+    // public void RemoveEnergy(int amount)
+    // {
+    //     energyAmount -= amount;
+    //     if (energyAmount < 0)
+    //     {
+    //         energyAmount = 0;
+    //     }
+    // }
+    //
+    // public void ResetEnergy()
+    // {
+    //     energyAmount = 0;
+    // }
 }

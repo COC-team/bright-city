@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public GameObject card;
-    public GameObject cityEvent;
+    public Event cityEvent;
     public int electricity;
     public string cardName;
     public string cardDescription;
@@ -36,10 +36,10 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
     {
         
     }
+    
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        print("Card clicked " + cardName);
     }
     
 
@@ -92,5 +92,10 @@ public class Card : HoverCursor, IPointerClickHandler, IDragHandler, IBeginDragH
         }
 
         return null;
+    }
+
+    public void OnDestroy()
+    {
+        Destroy(card);
     }
 }
