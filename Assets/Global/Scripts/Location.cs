@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Location : MonoBehaviour
 {
     public LocationType type;
     public int baseEnergyAmount;
     public int currentDayEnergyAmount;
-    public bool enabled = false;
+    [FormerlySerializedAs("enabled")] public bool enabledLocation = false;
     
     public Location(LocationType type, int baseEnergyAmount = 0)
     {
@@ -28,7 +29,7 @@ public class Location : MonoBehaviour
     
     public void EnableLocation()
     {
-        enabled = true;
+        enabledLocation = true;
     }
 }
 

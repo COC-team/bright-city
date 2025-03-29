@@ -84,7 +84,7 @@ public class CityManager : MonoBehaviour
         }
         
         previousDayEnergyDifference = Math.Abs(actualEnergy - neededEnergy);
-        print(neededEnergy);
+        Debug.Log("Finished day required energy: " + neededEnergy);
         if (previousDayEnergyDifference != 0)
         {
             city.population -= previousDayEnergyDifference;

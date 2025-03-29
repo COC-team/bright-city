@@ -25,7 +25,7 @@ public class City
         List<Location> enabledLocations = new List<Location>();
         foreach (Location location in locations)
         {
-            if (location.enabled)
+            if (location.enabledLocation)
             {
                 enabledLocations.Add(location);
             }
