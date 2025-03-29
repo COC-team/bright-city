@@ -1179,8 +1179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329bd82c6de1b0d4b8aa52baf15fcdfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cityPopulation: 0
-  maxCityDaysAmount: 0
+  cityPopulation: 5
+  maxCityDaysAmount: 100
   dayCounterText: {fileID: 0}
   finalMessage: {fileID: 0}
 --- !u!4 &1584160885
