@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Scenes.PowerStation.Scripts;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class StationManager  : MonoBehaviour
