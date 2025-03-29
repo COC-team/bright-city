@@ -1,6 +1,4 @@
-﻿using TMPro;
-
-namespace Scenes.PowerStation.Scripts
+﻿namespace Scenes.PowerStation.Scripts
 {
     public class CardInfo
     {

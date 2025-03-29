@@ -9,8 +9,8 @@ public class StationManager  : MonoBehaviour
     public static StationManager Instance { get; private set; }  // Singleton Instance
     public GameObject cardDeckPanel;
     public GameObject cardsInUsePanel;
-    public DynamicList cardDeck;
-    public DynamicList cardsInUse;
+    public DynamicList cardDeck = new DynamicList();
+    public DynamicList cardsInUse = new DynamicList();
     public GameObject cardPrefab;
     private Dictionary<int, List<CardInfo>> cardsPerDay = new Dictionary<int, List<CardInfo>>();
 
@@ -20,8 +20,6 @@ public class StationManager  : MonoBehaviour
     {
         // cardDeck = cardDeckPanel.GetComponent<DynamicList>();
         // cardsInUse = cardsInUsePanel.GetComponent<DynamicList>();
-        cardDeck = new DynamicList();
-        cardsInUse = new DynamicList();
         InitCards();
         AddCardsOfDay(0);
     }
@@ -106,9 +104,6 @@ public class StationManager  : MonoBehaviour
 
     CardInfo CreateCard(string cardName, string description, int electricity = 0, Event cardEvent = null)
     {
-        // var cardObject = Instantiate(cardPrefab, cardDeckPanel.transform);
-        // cardObject.SetActive(false);
-        // var card = cardObject.GetComponent<Card>();
         var card = new CardInfo();
         card.electricity = electricity;
         card.cityEvent = cardEvent;

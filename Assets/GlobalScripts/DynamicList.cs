@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Scenes.PowerStation.Scripts;
-using Unity.VisualScripting;
-using UnityEngine;
+
 
 public class DynamicList
 {
@@ -29,7 +28,6 @@ public class DynamicList
 
     public void RemoveItem(CardInfo item)
     {
-        // print("HUI BLYATB");
         if (items.Contains(item))
         {
             items.Remove(item);
@@ -43,10 +41,6 @@ public class DynamicList
 
     public void DestroyAllItems()
     {
-        // foreach (var card in items)
-        // {
-        //     Destroy(card.card);
-        // }
         items.Clear();
     }
 }
