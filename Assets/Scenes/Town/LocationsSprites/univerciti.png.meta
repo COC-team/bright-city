@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 171829e5b5f02e64c8ab178c0ed727f3
+guid: fddaa6cc214a63244953e01ef01a4d2b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3115986142843350260
-    second: kalendar (2)_0
+      213: -1003067693693058017
+    second: univerciti_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kalendar (2)_0
+      name: univerciti_0
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1069
-        width: 584
-        height: 551
+        x: 1026
+        y: 457
+        width: 792
+        height: 1117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0358cebc1bc1c4d0800000000000000
-      internalID: -3115986142843350260
+      spriteID: f1441cf3f336412f0800000000000000
+      internalID: -1003067693693058017
       vertices: []
       indices: 
       edges: []
@@ -160,9 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      kalendar (2)_0: -3115986142843350260
-      chel_0: -8777784417420518194
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
