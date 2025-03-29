@@ -19,6 +19,7 @@ public class CityManager : MonoBehaviour
     public City city;
     private Dictionary<int, List<Event>> eventsByDay;
     private Dictionary<int, LocationType> enablingLocationsByDay;
+    private Dictionary<int, string> baseMessageByDay;
     private int previousDayEnergyDifference = 0;
 
     private void Awake()
@@ -40,6 +41,7 @@ public class CityManager : MonoBehaviour
         StartCoroutine(WaitForSceneLoaderAndLoadScene());
         InitializeEvents();
         InitializeEnablingLocationsByDay();
+        InitializeBaseMessagesByDay();
     }
     
     private IEnumerator WaitForSceneLoaderAndLoadScene()
@@ -136,17 +138,23 @@ public class CityManager : MonoBehaviour
         
         StationManager.Instance.AddCardsOfDay(city.currentDay);
         UpdateEnergyAmountUI();
+
+        var baseMessage = "Good morning citizens!";;
+        if (baseMessageByDay.ContainsKey(city.currentDay))
+        {
+            baseMessage = baseMessageByDay[city.currentDay];
+        }
         
         if (eventsByDay.ContainsKey(city.currentDay))
         {
             Debug.Log($"Day {city.currentDay}: Events Occurring");
             var events = eventsByDay[city.currentDay];
-            NewsManager.Instance.ShowNews(events, previousDayEnergyDifference, unlockedLocation);
+            NewsManager.Instance.ShowNews(baseMessage, events, previousDayEnergyDifference, unlockedLocation);
             city.ApplyEvents(events);
         }
         else
         {
-            NewsManager.Instance.ShowNews(null, previousDayEnergyDifference, unlockedLocation);
+            NewsManager.Instance.ShowNews(baseMessage, null, previousDayEnergyDifference, unlockedLocation);
         }
 
         LogAllLocations();
@@ -258,5 +266,15 @@ public class CityManager : MonoBehaviour
         enablingLocationsByDay[3] = LocationType.Club;
         enablingLocationsByDay[4] = LocationType.Cinema;
         enablingLocationsByDay[5] = LocationType.Supermarket;
+    }
+    
+    private void InitializeBaseMessagesByDay()
+    {
+        baseMessageByDay = new Dictionary<int, string>();
+        baseMessageByDay[1] = "Welcome to the city! Day 1.";
+        baseMessageByDay[2] = "Day 2: Things are getting interesting.";
+        baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
+        baseMessageByDay[4] = "Day 4: The city is growing!";
+        baseMessageByDay[5] = "Final Day: Make it count!";
     }
 }
