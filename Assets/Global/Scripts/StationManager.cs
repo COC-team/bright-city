@@ -16,20 +16,10 @@ public class StationManager  : MonoBehaviour
 
     private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicate instances of the CityManager
-            return;
-        }
         cardDeck = cardDeckPanel.GetComponent<DynamicList>();
         cardsInUse = cardsInUsePanel.GetComponent<DynamicList>();
         InitCards();
-        // AddCardsOfDay(0);
+        AddCardsOfDay(0);
     }
 
     private void Awake()
@@ -88,7 +78,7 @@ public class StationManager  : MonoBehaviour
         cards.Add(CreateCard("3 power", "Gives 3 power to city", 3));
         cards.Add(CreateCard("4 power", "Gives 4 power to city", 4));
         cardsPerDay.Add(0, cards);
-        cards.Clear();
+        cards = new List<GameObject>();
         cards.Add(CreateCard("5 power", "Gives 5 power to city", 5));
         cards.Add(CreateCard("10 power", "Gives 10 power to city", 10));
         cards.Add(CreateCard("15 power", "Gives 15 power to city", 15));
