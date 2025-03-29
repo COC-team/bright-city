@@ -3233,8 +3233,8 @@ MonoBehaviour:
   m_text: ygvybgvvbgvbgvbygvygv guvgtvtgvtft6fg tvtfgt6frt6frtftfrtfr6t bgygtyg7t6frt6fr6f
     ytgt6ft6rfrt6 tgtfgt6ftr6hbnhbbbbgy ygytgytgtygygygyg6yg6
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 384c69965e9482247b175396a6ebad91, type: 2}
-  m_sharedMaterial: {fileID: 8331384636377243729, guid: 384c69965e9482247b175396a6ebad91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
+  m_sharedMaterial: {fileID: 7899742767113243203, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
