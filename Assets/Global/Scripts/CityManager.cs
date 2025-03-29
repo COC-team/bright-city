@@ -184,7 +184,7 @@ public class CityManager : MonoBehaviour
         {
             // Get the component from the GameObject
             TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
-            component.text = "Energy: " + StationManager.Instance.energyAmount;
+            component.text = "Energy: " + StationManager.Instance.GetEnergy();
         }
     }
     
