@@ -10,9 +10,6 @@ public class CityManager : MonoBehaviour
 
     public int cityPopulation;
     public int maxCityDaysAmount;
-    
-    public TextMeshProUGUI dayCounterText;
-    public TextMeshProUGUI finalMessage;
 
     private bool isGameOver = false;
     public bool popupOpened = false;
@@ -77,7 +74,6 @@ public class CityManager : MonoBehaviour
     {
         Debug.Log("You win!");
         isGameOver = true;
-        UpdateFinalMessageUI("You win!!!!");
         SceneLoader.Instance.LoadNewScene("Win", true);
     }
     
@@ -85,7 +81,6 @@ public class CityManager : MonoBehaviour
     {
         Debug.Log("You lose!");
         isGameOver = true;
-        UpdateFinalMessageUI("You lose!!!!");
         SceneLoader.Instance.LoadNewScene("Lose", true);
     }
     
@@ -224,16 +219,6 @@ public class CityManager : MonoBehaviour
             // Get the component from the GameObject
             TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
             component.text = city.population.ToString();
-        }
-    }
-    
-    private void UpdateFinalMessageUI(string message)
-    {
-        Debug.Log("Updating final message UI");
-        if (finalMessage != null)
-        {
-            Debug.Log("Final message text is not null");
-            finalMessage.text = message;  // Update text here
         }
     }
 
