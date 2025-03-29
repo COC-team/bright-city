@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Location : MonoBehaviour
@@ -17,6 +18,7 @@ public class Location : MonoBehaviour
     public void ApplyEnergyModifier(int energyModifier)
     {
         currentDayEnergyAmount += energyModifier;
+        currentDayEnergyAmount = Math.Min(currentDayEnergyAmount, 0);
     }
     
     public void ResetDayEnergy()
