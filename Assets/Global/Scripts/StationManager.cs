@@ -18,6 +18,8 @@ public class StationManager  : MonoBehaviour
     {
         cardDeck = cardDeckPanel.GetComponent<DynamicList>();
         cardsInUse = cardsInUsePanel.GetComponent<DynamicList>();
+        InitCards();
+        AddCardsOfDay(0);
     }
 
     private void Awake()
@@ -71,21 +73,27 @@ public class StationManager  : MonoBehaviour
     void InitCards()
     {
         List<GameObject> cards = new List<GameObject>();
+        cards.Add(CreateCard("1 power", "Gives 1 power to city", 1));
+        cards.Add(CreateCard("2 power", "Gives 2 power to city", 2));
+        cards.Add(CreateCard("3 power", "Gives 3 power to city", 3));
+        cards.Add(CreateCard("4 power", "Gives 4 power to city", 4));
+        cardsPerDay.Add(0, cards);
+        cards = new List<GameObject>();
         cards.Add(CreateCard("5 power", "Gives 5 power to city", 5));
         cards.Add(CreateCard("10 power", "Gives 10 power to city", 10));
         cards.Add(CreateCard("15 power", "Gives 15 power to city", 15));
         cards.Add(CreateCard("20 power", "Gives 20 power to city", 20));
         
-        cardsPerDay.Add(0, cards);
+        cardsPerDay.Add(1, cards);
     }
 
-    void AddCardsOfDay(int day)
+    public void AddCardsOfDay(int day)
     {
         if (cardsPerDay.ContainsKey(day))
         {
             foreach (var card in cardsPerDay[day])
             {
-                Debug.Log("dsfds");
+                card.SetActive(true);
             }
         }
     }
@@ -97,27 +105,8 @@ public class StationManager  : MonoBehaviour
         var card = cardObject.GetComponent<Card>();
         card.electricity = electricity;
         card.cityEvent = cardEvent;
-        card.name = cardName;
+        card.cardName = cardName;
         card.cardDescription = description;
         return cardObject;
     }
-    
-    // public void AddEnergy(int amount)
-    // {
-    //     energyAmount += amount;
-    // }
-    //
-    // public void RemoveEnergy(int amount)
-    // {
-    //     energyAmount -= amount;
-    //     if (energyAmount < 0)
-    //     {
-    //         energyAmount = 0;
-    //     }
-    // }
-    //
-    // public void ResetEnergy()
-    // {
-    //     energyAmount = 0;
-    // }
 }

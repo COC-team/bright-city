@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 25c6c14e47e272843bbce783001e958f
+guid: 6dc0de97cdc73744a96618017ca5db07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1805430695319648716
-    second: quit button_0
-  - first:
-      213: 5896551446334646798
-    second: quit button_1
+      213: 2047800183815118767
+    second: electrostation_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: quit button_0
+      name: electrostation_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 780
-        height: 356
+        x: 952
+        y: 1120
+        width: 789
+        height: 624
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 436c2e22952d1f6e0800000000000000
-      internalID: -1805430695319648716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quit button_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 218
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0aa7969c42c4d150800000000000000
-      internalID: 5896551446334646798
+      spriteID: faf974fda6f3b6c10800000000000000
+      internalID: 2047800183815118767
       vertices: []
       indices: 
       edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      quit button_0: -1805430695319648716
-      quit button_1: 5896551446334646798
+      electrostation_0: 2047800183815118767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
