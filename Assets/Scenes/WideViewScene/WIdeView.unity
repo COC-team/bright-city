@@ -2672,8 +2672,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Do you really want to finish this day?
 
-    You selected energy for this
-    day is 135!'
+    You selected energy for this day is 135!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
   m_sharedMaterial: {fileID: 7899742767113243203, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
@@ -3322,7 +3321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityPopulation: 1000
-  maxCityDaysAmount: 5
+  maxCityDaysAmount: 14
   popupOpened: 0
 --- !u!4 &1584160885
 Transform:

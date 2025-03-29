@@ -30,6 +30,18 @@ public class Event
     {
         return locationsEnergyModifier.ContainsKey(locationType) ? locationsEnergyModifier[locationType] : 0;
     }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is Event) 
+            return description.Equals(((Event) obj).description);
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return description.GetHashCode();
+    }
 }
 
 public enum EventType
