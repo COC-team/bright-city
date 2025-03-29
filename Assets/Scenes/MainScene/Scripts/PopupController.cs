@@ -8,8 +8,9 @@ public class PopupController : MonoBehaviour
     public Button closeButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    void Start()
     {
+        print("hui  wqewqeq");
         ClosePopup();
         closeButton.onClick.AddListener(ClosePopup);
     }
@@ -20,8 +21,9 @@ public class PopupController : MonoBehaviour
         SetText(text);
     }
 
-    private void ClosePopup()
+    public void ClosePopup()
     {
+        print("hui");
         popupPanel.SetActive(false);
         SetText(string.Empty);
     }

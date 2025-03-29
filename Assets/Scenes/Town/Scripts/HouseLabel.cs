@@ -4,6 +4,7 @@ using TMPro;
 public class HouseLabel : MonoBehaviour
 {
     public TextMeshProUGUI label; // Ссылка на TextMeshPro
+    private Location location;
 
     private void Start()
     {
@@ -11,11 +12,18 @@ public class HouseLabel : MonoBehaviour
         {
             label.gameObject.SetActive(false); // Изначально лейбл скрыт
         }
+
+        location = GetComponent<Location>();
+
+        if (location == null)
+        {
+            Debug.LogWarning("Location компонент не найден на объекте " + gameObject.name);
+        }
     }
 
     private void OnMouseEnter()
     {
-        if (label != null)
+        if (label != null && location != null && location.IsLocationEnabled())
         {
             label.gameObject.SetActive(true); // Показать лейбл при наведении
         }
