@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1297164484232680510, guid: 069fda069922648469b534f7d804433d, type: 3}
+  m_Sprite: {fileID: -91903354144237191, guid: 069fda069922648469b534f7d804433d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -261,7 +261,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.499999, y: 13.150001}
+    oldSize: {x: 0.07, y: 0.089999996}
     newSize: {x: 0.07, y: 0.089999996}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1010,7 +1010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1febae1a5f8e846a3d324746407cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupController: {fileID: 0}
 --- !u!4 &1114541062
 Transform:
   m_ObjectHideFlags: 0
@@ -1055,7 +1054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79713307f8158814aba632446c26369b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyAmount: 0
+  cardDeckPanel: {fileID: 0}
+  cardsInUsePanel: {fileID: 0}
+  cardPrefab: {fileID: 0}
 --- !u!4 &1162473255
 Transform:
   m_ObjectHideFlags: 0
