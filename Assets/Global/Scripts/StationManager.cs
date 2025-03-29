@@ -72,16 +72,16 @@ public class StationManager  : MonoBehaviour
     void InitCards()
     {
         List<CardInfo> cards = new List<CardInfo>();
-        cards.Add(CreateCard("1 power", "Gives 1 power to city", 1));
-        cards.Add(CreateCard("2 power", "Gives 2 power to city", 2));
-        cards.Add(CreateCard("3 power", "Gives 3 power to city", 3));
-        cards.Add(CreateCard("4 power", "Gives 4 power to city", 4));
+        cards.Add(CreateCard("1", "Gives 1 power to city", 1));
+        cards.Add(CreateCard("2", "Gives 2 power to city", 2));
+        cards.Add(CreateCard("3", "Gives 3 power to city", 3));
+        cards.Add(CreateCard("4", "Gives 4 power to city", 4));
         cardsPerDay.Add(0, cards);
         cards = new List<CardInfo>();
-        cards.Add(CreateCard("5 power", "Gives 5 power to city", 5));
-        cards.Add(CreateCard("10 power", "Gives 10 power to city", 10));
-        cards.Add(CreateCard("15 power", "Gives 15 power to city", 15));
-        cards.Add(CreateCard("20 power", "Gives 20 power to city", 20));
+        cards.Add(CreateCard("5", "Gives 5 power to city", 5));
+        cards.Add(CreateCard("10", "Gives 10 power to city", 10));
+        cards.Add(CreateCard("15", "Gives 15 power to city", 15));
+        cards.Add(CreateCard("20", "Gives 20 power to city", 20));
         
         cardsPerDay.Add(1, cards);
     }
@@ -92,8 +92,6 @@ public class StationManager  : MonoBehaviour
         {
             foreach (var card in cardsPerDay[day])
             {
-                // if (card.card != null)
-                //     card.card.SetActive(true);
                 cardDeck.AddItem(card);
             }
         }
