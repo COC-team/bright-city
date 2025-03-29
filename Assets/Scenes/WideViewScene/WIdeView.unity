@@ -225,7 +225,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -6351617318852302439, guid: a6a7bc045c814df42b56f8e1a1e160ed, type: 3}
+  m_Sprite: {fileID: -6269852306401483601, guid: 906365d8c1952fb40a2ae62ad03f1a55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1626,7 +1626,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 796098187
-  m_SortingLayer: 2
+  m_SortingLayer: 10
   m_SortingOrder: 500
   m_Sprite: {fileID: 3748828067909743293, guid: 3e34e820bf197b14f88a4543ee3fe9e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2125,7 +2125,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 796098187
-  m_SortingLayer: 2
+  m_SortingLayer: 10
   m_SortingOrder: 500
   m_Sprite: {fileID: 2530564911472380330, guid: 0b770c2ed7da7c44bb65fe8fd1a855eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2674,8 +2674,8 @@ MonoBehaviour:
 
     You selected energy for this day is 135!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 384c69965e9482247b175396a6ebad91, type: 2}
-  m_sharedMaterial: {fileID: 8331384636377243729, guid: 384c69965e9482247b175396a6ebad91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
+  m_sharedMaterial: {fileID: 7899742767113243203, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3513,7 +3513,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 796098187
-  m_SortingLayer: 2
+  m_SortingLayer: 10
   m_SortingOrder: 500
   m_Sprite: {fileID: 1995164728963687116, guid: 893ea6a160e27e7418020885ff613a39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3732,8 +3732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -29.060059, y: 122.04401}
-  m_SizeDelta: {x: -2830.98, y: -1611.63}
+  m_AnchoredPosition: {x: 107.979, y: -39.738}
+  m_SizeDelta: {x: -2480.769, y: -1364.198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914646936
 MonoBehaviour:
@@ -3757,8 +3757,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New EVENT OCCURED REALLY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 384c69965e9482247b175396a6ebad91, type: 2}
-  m_sharedMaterial: {fileID: 8331384636377243729, guid: 384c69965e9482247b175396a6ebad91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
+  m_sharedMaterial: {fileID: 7899742767113243203, guid: 2f462f6e9c3426c4fb0e660348512964, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
