@@ -1700,7 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDeckPanel: {fileID: 0}
   cardsInUsePanel: {fileID: 0}
-  cardPrefab: {fileID: 0}
+  cardPrefab: {fileID: 7088799576466137103, guid: 755cd7db9302c5446b0583f4b49118a0, type: 3}
 --- !u!4 &1162473255
 Transform:
   m_ObjectHideFlags: 0
