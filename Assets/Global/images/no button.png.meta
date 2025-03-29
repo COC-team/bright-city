@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 171829e5b5f02e64c8ab178c0ed727f3
+guid: 3e34e820bf197b14f88a4543ee3fe9e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3115986142843350260
-    second: kalendar (2)_0
+      213: 3748828067909743293
+    second: no button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kalendar (2)_0
+      name: no button_0
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1069
-        width: 584
-        height: 551
+        x: 1953
+        y: 1370
+        width: 307
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0358cebc1bc1c4d0800000000000000
-      internalID: -3115986142843350260
+      spriteID: db236cff343860430800000000000000
+      internalID: 3748828067909743293
       vertices: []
       indices: 
       edges: []
@@ -160,9 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      kalendar (2)_0: -3115986142843350260
-      chel_0: -8777784417420518194
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

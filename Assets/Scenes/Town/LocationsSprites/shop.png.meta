@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 171829e5b5f02e64c8ab178c0ed727f3
+guid: 4be76be1b2ed02e46aa1814ba1ab95d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3115986142843350260
-    second: kalendar (2)_0
+      213: 6840857970483876212
+    second: shop_0
+  - first:
+      213: 7773751018523570969
+    second: shop_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +129,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kalendar (2)_0
+      name: shop_1
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1069
-        width: 584
-        height: 551
+        x: 743
+        y: 748
+        width: 580
+        height: 608
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0358cebc1bc1c4d0800000000000000
-      internalID: -3115986142843350260
+      spriteID: 913bd6f3d59e1eb60800000000000000
+      internalID: 7773751018523570969
       vertices: []
       indices: 
       edges: []
@@ -151,7 +154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ee3e30711f4d5b84f88a8b5cf0983c26
     internalID: 0
     vertices: []
     indices: 
@@ -161,8 +164,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kalendar (2)_0: -3115986142843350260
-      chel_0: -8777784417420518194
+      shop_1: 7773751018523570969
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

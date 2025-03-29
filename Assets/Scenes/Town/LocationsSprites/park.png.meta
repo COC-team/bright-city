@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 171829e5b5f02e64c8ab178c0ed727f3
+guid: 97e62150cba684a4ea009cb7d5dd857a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3115986142843350260
-    second: kalendar (2)_0
+      213: -7216651109296135376
+    second: park_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kalendar (2)_0
+      name: park_0
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1069
-        width: 584
-        height: 551
+        x: 1667
+        y: 808
+        width: 1298
+        height: 969
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0358cebc1bc1c4d0800000000000000
-      internalID: -3115986142843350260
+      spriteID: 033a9723d0e49db90800000000000000
+      internalID: -7216651109296135376
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kalendar (2)_0: -3115986142843350260
-      chel_0: -8777784417420518194
+      park_0: -7216651109296135376
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
