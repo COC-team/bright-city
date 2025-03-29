@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 46b281145c7b4e44ab5e9b218c2d4da7
+guid: 859817c8a60bd1446a9d14f3d8041b63
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3649108509029339350
-    second: back button_0
+      213: 4257209905354365349
+    second: right common house_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: back button_0
+      name: right common house_0
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1539
-        width: 230
-        height: 117
+        x: 1168
+        y: 547
+        width: 243
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d09c8beadc34a230800000000000000
-      internalID: 3649108509029339350
+      spriteID: 5a9dbee6ad5a41b30800000000000000
+      internalID: 4257209905354365349
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      back button_0: 3649108509029339350
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
