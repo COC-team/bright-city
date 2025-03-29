@@ -117,6 +117,8 @@ public class CityManager : MonoBehaviour
         city.SwitchNextDay();
         UpdateDayCounterUI();
         EnableCurrentDayLocation();
+
+        UpdateEnergyAmountUI();
         
         if (eventsByDay.ContainsKey(city.currentDay))
         {
@@ -171,6 +173,19 @@ public class CityManager : MonoBehaviour
         }
     }
     
+    public void UpdateEnergyAmountUI()
+    {
+        GameObject targetObject = GameObject.Find("EnergyAmount");
+
+        // Check if the GameObject was found
+        if (targetObject != null)
+        {
+            // Get the component from the GameObject
+            TextMeshProUGUI component = targetObject.GetComponent<TextMeshProUGUI>();
+            component.text = "Energy: " + StationManager.Instance.energyAmount;
+        }
+    }
+    
     private void UpdateFinalMessageUI(string message)
     {
         if (finalMessage != null)
@@ -198,14 +213,14 @@ public class CityManager : MonoBehaviour
         // Initialize some events
         Event chillDay = new Event(EventType.NO_IMPACT, "Chill day, no events.");
         
-        Event earthquake = new Event(EventType.SOME_LOCATIONS, "Earthquake hits the city!");
+        Event earthquake = new Event(EventType.SOME_LOCATIONS, "Earthquake hits the city! -50 energy at Factory and -30 at Hospital.");
         earthquake.locationsEnergyModifier = new Dictionary<LocationType, int>
         {
             { LocationType.Factory, -50 },
             { LocationType.Hospital, -30 }
         };
 
-        Event protest = new Event(EventType.SOME_LOCATIONS, "Protest at the School.");
+        Event protest = new Event(EventType.SOME_LOCATIONS, "Protest at the School. +20 energy.");
         protest.locationsEnergyModifier = new Dictionary<LocationType, int>
         {
             { LocationType.School, 20 }
@@ -215,6 +230,8 @@ public class CityManager : MonoBehaviour
         eventsByDay[1] = new List<Event> { chillDay };
         eventsByDay[2] = new List<Event> { earthquake };
         eventsByDay[3] = new List<Event> { protest };
+        eventsByDay[4] = new List<Event> { chillDay };
+        eventsByDay[5] = new List<Event> { chillDay };
     }
 
     private void InitializeEnablingLocationsByDay()
@@ -222,8 +239,8 @@ public class CityManager : MonoBehaviour
         enablingLocationsByDay = new Dictionary<int, LocationType>();
         enablingLocationsByDay[1] = LocationType.Hospital;
         enablingLocationsByDay[2] = LocationType.School;
-        enablingLocationsByDay[3] = LocationType.Supermarket;
+        enablingLocationsByDay[3] = LocationType.Club;
         enablingLocationsByDay[4] = LocationType.Cinema;
-        enablingLocationsByDay[5] = LocationType.Club;
+        enablingLocationsByDay[5] = LocationType.Supermarket;
     }
 }

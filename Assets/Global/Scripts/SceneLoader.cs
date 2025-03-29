@@ -70,6 +70,7 @@ public class SceneLoader : MonoBehaviour
             return loadOperation.isDone;
         });
         CityManager.Instance.UpdateDayCounterUI();
+        CityManager.Instance.UpdateEnergyAmountUI();
     }
     
     public void LoadSceneAndCollectLocations(string sceneToLoad)

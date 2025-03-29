@@ -1460,7 +1460,7 @@ MonoBehaviour:
   type: 4
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
-  enabled: 1
+  enabled: 0
 --- !u!1 &644916276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,7 @@ MonoBehaviour:
   type: 0
   baseEnergyAmount: 20
   currentDayEnergyAmount: 0
-  enabled: 1
+  enabled: 0
 --- !u!114 &720736668
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewsManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class NewsManager : MonoBehaviour
 
     public void ShowNews(List<Event> events, int previousDayEnergyDifference)
     {
+        Debug.Log("Showing news...");
         string newsText = "Good morning citizens!\n";
         if (previousDayEnergyDifference != 0)
         {
@@ -42,6 +44,56 @@ public class NewsManager : MonoBehaviour
             }            
         }
         
-        popupController.ShowPopup(newsText);
+        GameObject targetObject = FindInactiveGameObject("Popup");
+
+        // Check if the GameObject was found
+        if (targetObject == null)
+        {
+            Debug.LogError("Popup GameObject not found in the scene.");
+            return;
+        }
+        if (targetObject != null)
+        {
+            // Get the component from the GameObject
+            PopupController component = targetObject.GetComponent<PopupController>();
+            component.ShowPopup(newsText);
+        }
+    }
+    
+    public GameObject FindInactiveGameObject(string name)
+    {
+        // Get all root GameObjects in the scene
+        GameObject[] allRootObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+        
+        foreach (var rootObj in allRootObjects)
+        {
+            GameObject found = FindInHierarchy(rootObj.transform, name);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+        return null;
+    }
+
+    private GameObject FindInHierarchy(Transform parent, string name)
+    {
+        // Check if the current object matches the name
+        if (parent.name == name)
+        {
+            return parent.gameObject;
+        }
+
+        // Recursively search the children
+        foreach (Transform child in parent)
+        {
+            GameObject found = FindInHierarchy(child, name);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+
+        return null; // If not found
     }
 }

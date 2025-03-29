@@ -34,7 +34,16 @@ public class Location : MonoBehaviour
 
     public bool IsLocationEnabled()
     {
-        return enabled;
+        var enabledLocations = CityManager.Instance.city.getEnabledLocations();
+        foreach (var location in enabledLocations)
+        {
+            if (location.type == type)
+            {
+                return true;
+            }
+        }
+        
+        return false;
     }
 
     public String getLocationString()
