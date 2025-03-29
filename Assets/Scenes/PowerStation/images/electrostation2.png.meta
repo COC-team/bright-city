@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      electrostation2_0: -2274147280105986408
+      electrostation2_1: 8851033168368437640
+      electrostation2_2: -5426768686343668127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
