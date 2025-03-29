@@ -9,6 +9,7 @@ public class ButtonHoverEffect : MonoBehaviour
     public float scaleMultiplier = 1.1f;  // Scale increase on hover
     public float darkenAmount = 0.2f;     // How much the button darkens (0.2 = 20% darker)
     public float animationSpeed = 10f;    // Animation speed
+    public bool isPopupButton = false;
 
     private bool isHovered = false;
 
@@ -35,6 +36,13 @@ public class ButtonHoverEffect : MonoBehaviour
 
     void Update()
     {
+        
+        if (!isPopupButton && CityManager.Instance.popupOpened)
+        {
+            // Если попап открыт, не обновляй эффект
+            return;
+        }
+        
         if (isHovered)
         {
             // Smoothly scale up
