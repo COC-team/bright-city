@@ -128,10 +128,19 @@ public class CityManager : MonoBehaviour
             previousDayNeededEnergy += location.currentDayEnergyAmount;
         }
         
-        previousDayEnergyDifference = Math.Abs(previousDayActualEnergy - previousDayNeededEnergy);
+        previousDayEnergyDifference = previousDayNeededEnergy - previousDayActualEnergy;
+        if (previousDayEnergyDifference < 0)
+        {
+            previousDayEnergyDifference = 0;
+        }
+
         if (previousDayEnergyDifference != 0)
         {
             city.population -= previousDayEnergyDifference;
+            if (city.population < 0)
+            {
+                city.population = 0;
+            }
             UpdatePopulationAmountUI();
         }
         
