@@ -123,7 +123,6 @@ public class StationManager  : MonoBehaviour
         cards.Add(CreateCard("200", "Gives 10 power to city", 200));
         cardsPerDay.Add(9, cards);
         cards = new List<CardInfo>();
-        cards.Add(CreateCard("30", "Gives 10 power to city", 30 ));
         cards.Add(CreateCard("50", "Gives 10 power to city", 50));
         cards.Add(CreateCard("100", "Gives 10 power to city", 100));
         cards.Add(CreateCard("200", "Gives 10 power to city", 200));
@@ -137,18 +136,15 @@ public class StationManager  : MonoBehaviour
         cards = new List<CardInfo>();
         cards.Add(CreateCard("10", "Gives 10 power to city", 10));
         cards.Add(CreateCard("30", "Gives 10 power to city", 30 ));
-        cards.Add(CreateCard("100", "Gives 10 power to city", 100));
         cards.Add(CreateCard("200", "Gives 10 power to city", 200));
         cardsPerDay.Add(12, cards);
         cards = new List<CardInfo>();
-        cards.Add(CreateCard("10", "Gives 10 power to city", 10));
         cards.Add(CreateCard("30", "Gives 10 power to city", 30));
         cards.Add(CreateCard("100", "Gives 10 power to city", 100));
         cards.Add(CreateCard("200", "Gives 10 power to city", 200));
         cardsPerDay.Add(13, cards);
         cards = new List<CardInfo>();
         cards.Add(CreateCard("10", "Gives 10 power to city", 10));
-        cards.Add(CreateCard("30", "Gives 10 power to city", 30));
         cards.Add(CreateCard("100", "Gives 10 power to city", 100));
         cards.Add(CreateCard("200", "Gives 10 power to city", 200));
         cardsPerDay.Add(14, cards);
