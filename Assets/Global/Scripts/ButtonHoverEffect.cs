@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ButtonHoverEffect : MonoBehaviour
@@ -5,6 +6,7 @@ public class ButtonHoverEffect : MonoBehaviour
     private Vector3 originalScale;
     private Color originalColor;
     private SpriteRenderer spriteRenderer;
+    private AudioClip click;
 
     public float scaleMultiplier = 1.1f;  // Scale increase on hover
     public float darkenAmount = 0.2f;     // How much the button darkens (0.2 = 20% darker)
@@ -17,6 +19,7 @@ public class ButtonHoverEffect : MonoBehaviour
     {
         originalScale = transform.localScale;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        click = Resources.Load<AudioClip>("Audio/button_click");
 
         if (spriteRenderer != null)
         {
@@ -32,6 +35,11 @@ public class ButtonHoverEffect : MonoBehaviour
     void OnMouseExit()
     {
         isHovered = false;
+    }
+
+    private void OnMouseUp()
+    {
+        AudioSource.PlayClipAtPoint(click, Camera.main.transform.position);
     }
 
     void Update()

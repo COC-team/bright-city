@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpriteClickHandler : MonoBehaviour
@@ -6,11 +7,14 @@ public class SpriteClickHandler : MonoBehaviour
     private Color originalColor;
     public Color highlightColor = Color.red;
     public string sceneToLoad; // Scene to load when clicked
+    private AudioClip click;
+
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color; // Save original color
+        click = Resources.Load<AudioClip>("Audio/button_click");
     }
 
     void OnMouseEnter()
@@ -28,9 +32,16 @@ public class SpriteClickHandler : MonoBehaviour
         spriteRenderer.color = originalColor; // Revert to original color
     }
 
-    void OnMouseDown()
+    private void OnMouseUp()
     {
-        // Activate the preloaded scene using the global SceneLoader
+        AudioSource.PlayClipAtPoint(click, Camera.main.transform.position);
+        StartCoroutine(LoadSceneWithDelay());
+    }
+
+    private IEnumerator LoadSceneWithDelay()
+    {
+        yield return new WaitForSeconds(0.2f); // Задержка в 0.5 секунды
+        
         if (SceneLoader.Instance != null)
         {
             SceneLoader.Instance.LoadNewScene(sceneToLoad); // Activate the preloaded scene

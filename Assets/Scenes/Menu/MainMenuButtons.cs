@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,11 +9,13 @@ public class MainMenuButtons : MonoBehaviour
     public Color highlightColor = Color.red; // Цвет выделения
     public string sceneToLoad = "NextScene"; // Название сцены для загрузки
     public bool shouldShutdown = false; // Флаг для проверки, нужно ли завершить игру
-
+    private AudioClip click;
+    
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color; // Запоминаем оригинальный цвет
+        click = Resources.Load<AudioClip>("Audio/button_click");
     }
 
     void OnMouseEnter()
@@ -25,15 +28,23 @@ public class MainMenuButtons : MonoBehaviour
         spriteRenderer.color = originalColor; // Возвращаем цвет
     }
 
-    void OnMouseDown()
+    private void OnMouseUp()
     {
+        AudioSource.PlayClipAtPoint(click, Camera.main.transform.position);
+        StartCoroutine(LoadSceneWithDelay());
+    }
+
+    private IEnumerator LoadSceneWithDelay()
+    {
+        yield return new WaitForSeconds(0.2f); // Задержка в 0.5 секунды
+
         if (shouldShutdown)
         {
             QuitGame(); // Если установлен флаг shouldShutdown, вызываем метод завершения игры
         }
         else
         {
-            SceneManager.LoadScene(sceneToLoad); // Загружаем сцену при клике
+            SceneManager.LoadScene(sceneToLoad); // Загружаем сцену после задержки
         }
     }
 
