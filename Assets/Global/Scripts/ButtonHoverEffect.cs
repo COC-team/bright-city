@@ -37,7 +37,7 @@ public class ButtonHoverEffect : MonoBehaviour
     void Update()
     {
         
-        if (!isPopupButton && CityManager.Instance.popupOpened)
+        if (!isPopupButton && CityManager.Instance && CityManager.Instance.popupOpened)
         {
             // Если попап открыт, не обновляй эффект
             return;
