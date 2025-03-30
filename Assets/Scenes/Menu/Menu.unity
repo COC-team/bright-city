@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 0.9921569, g: 0.85098046, b: 0.09411766, a: 1}
-  sceneToLoad: WideView
+  sceneToLoad: AfterMenuScene
   shouldShutdown: 0
 --- !u!212 &215556629
 SpriteRenderer:

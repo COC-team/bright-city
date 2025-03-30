@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: c35a085305addb441b69f6710cd7291f
   - enabled: 1
+    path: Assets/Scenes/AfterMenuScene/AfterMenuScene.unity
+    guid: 7b0ee07cff79088439a00a3fccb55ca6
+  - enabled: 1
     path: Assets/Scenes/WideViewScene/WIdeView.unity
     guid: 71b6b6033578bff43a63bfbd0647853e
   - enabled: 1
