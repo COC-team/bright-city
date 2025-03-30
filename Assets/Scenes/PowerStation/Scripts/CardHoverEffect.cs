@@ -8,15 +8,18 @@ public class CardHoverEffect : MonoBehaviour
     public float animationSpeed = 10f;   // Speed of scaling and moving animation
 
     private bool isHovered = false;
+    private AudioClip hoverSound;
 
     private void Start()
     {
+        hoverSound = Resources.Load<AudioClip>("Audio/card_choosing");
         originalScale = transform.localScale;
         targetScale = originalScale * scaleAmount;
     }
 
     private void OnMouseEnter()
     {
+        AudioSource.PlayClipAtPoint(hoverSound, Camera.main.transform.position, 2f);
         isHovered = true;
     }
 
