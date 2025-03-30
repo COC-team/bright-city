@@ -2595,7 +2595,7 @@ MonoBehaviour:
   baseEnergyAmount: 60
   currentDayEnergyAmount: 0
   description: Where doctors prescribe TikTok dances for quicker recovery
-  enabledLocation: 1
+  enabledLocation: 0
 --- !u!114 &720736668
 MonoBehaviour:
   m_ObjectHideFlags: 0

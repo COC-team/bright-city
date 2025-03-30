@@ -21,6 +21,8 @@ public class CityManager : MonoBehaviour
     private Dictionary<int, LocationType> enablingLocationsByDay;
     private Dictionary<int, string> baseMessageByDay;
     private int previousDayEnergyDifference = 0;
+    private int previousDayNeededEnergy = 0;
+    private int previousDayActualEnergy = 0;
     
     private List<Event> usedEvents = new List<Event>(); // List to track used events
 
@@ -108,16 +110,15 @@ public class CityManager : MonoBehaviour
             Debug.Log("Game is already over. Cannot finish day.");
             return;
         }
-        int actualEnergy = StationManager.Instance.GetEnergy();
+        previousDayActualEnergy = StationManager.Instance.GetEnergy();
         StationManager.Instance.ClearCards();
-        int neededEnergy = 0;
+        previousDayNeededEnergy = 0;
         foreach (var location in city.getEnabledLocations())
         {
-            neededEnergy += location.currentDayEnergyAmount;
+            previousDayNeededEnergy += location.currentDayEnergyAmount;
         }
         
-        previousDayEnergyDifference = Math.Abs(actualEnergy - neededEnergy);
-        Debug.Log("Finished day required energy: " + neededEnergy);
+        previousDayEnergyDifference = Math.Abs(previousDayActualEnergy - previousDayNeededEnergy);
         if (previousDayEnergyDifference != 0)
         {
             city.population -= previousDayEnergyDifference;
@@ -161,21 +162,10 @@ public class CityManager : MonoBehaviour
         
         eventsByDay[city.currentDay] = new List<Event>();
         
-        if (eventsByDay.ContainsKey(city.currentDay))
-        {
-            Debug.Log($"Day {city.currentDay}: Events Occurring");
-            if (city.currentDay == 0)
-            {
-                NewsManager.Instance.ShowNews(baseMessage, new List<Event>(), previousDayEnergyDifference, unlockedLocation);
-            }
-            var events = GenerateRandomEventsForDay();
-            NewsManager.Instance.ShowNews(baseMessage, events, previousDayEnergyDifference, unlockedLocation);
-            city.ApplyEvents(events);
-        }
-        else
-        {
-            NewsManager.Instance.ShowNews(baseMessage, null, previousDayEnergyDifference, unlockedLocation);
-        }
+        Debug.Log($"Day {city.currentDay}: Events Occurring");
+        var events = GenerateRandomEventsForDay();
+        NewsManager.Instance.ShowNews(baseMessage, events, previousDayNeededEnergy, previousDayActualEnergy, previousDayEnergyDifference, unlockedLocation);
+        city.ApplyEvents(events);
 
         LogAllLocations();
     }
@@ -278,23 +268,23 @@ public class CityManager : MonoBehaviour
         // Select number of events (0 to 3)
         int eventCount;
         int randomValue = UnityEngine.Random.Range(0, 100);
-        if (city.currentDay == 0)
+        if (city.currentDay == 0 || city.currentDay == 1)
         {
             eventCount = 0;
         }
         else if (city.currentDay <= 5 )
         {
             if (randomValue < 20) eventCount = 0;      // 15%
-            else if (randomValue < 60) eventCount = 1; // 25%
-            else if (randomValue < 95) eventCount = 2; // 45%
-            else eventCount = 3;                       // 15%
+            else if (randomValue < 80) eventCount = 1; // 25%
+            /*else if (randomValue < 95) eventCount = 2; // 45%*/
+            else eventCount = 2;                       // 15%
         }
         else
         {
             if (randomValue < 10) eventCount = 0;      // 15%
-            else if (randomValue < 25) eventCount = 1; // 25%
-            else if (randomValue < 70) eventCount = 2; // 45%
-            else eventCount = 3;                       // 15%
+            else if (randomValue < 30) eventCount = 1; // 25%
+            /*else if (randomValue < 70) eventCount = 2; // 45%*/
+            else eventCount = 2;                       // 15%
         }
 
 
@@ -483,7 +473,7 @@ public class CityManager : MonoBehaviour
     private void InitializeBaseMessagesByDay()
     {
         baseMessageByDay = new Dictionary<int, string>();
-        baseMessageByDay[1] = "Day 1: Let's get started.";
+        baseMessageByDay[1] = "Day 1: You will unlock locations throughout next 14 days.\nREMEMBER: you need to get as close as possible to electricity consuming level or \nPEOPLE WILL DIE\n";
         baseMessageByDay[2] = "Day 2: Things are getting interesting.";
         baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
         baseMessageByDay[4] = "Day 4: The city is evolving, stay vigilant.";
