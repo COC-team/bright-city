@@ -5,9 +5,11 @@ public class NextDayButton : MonoBehaviour
 {
     public Button button;
     public ConfirmationDialog confirmationDialog;
+    private AudioClip click;
 
     private void Awake()
     {
+        click = Resources.Load<AudioClip>("Audio/button_click");
         if (button != null)
         {
             button.onClick.AddListener(OnButtonClicked);
@@ -17,7 +19,7 @@ public class NextDayButton : MonoBehaviour
     // This method is called when the button is clicked
     private void OnButtonClicked()
     {
-        Debug.Log("Button clicked!");
+        AudioSource.PlayClipAtPoint(click, Camera.main.transform.position);
         if (CityManager.Instance.popupOpened)
         {
             // Если попап открыт, не обновляй эффект
