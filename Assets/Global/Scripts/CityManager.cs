@@ -25,6 +25,8 @@ public class CityManager : MonoBehaviour
     private int previousDayActualEnergy = 0;
     private string lastNewsMessage;
     
+    private AudioClip newDaySound;
+    
     private List<Event> usedEvents = new List<Event>(); // List to track used events
 
     private void Awake()
@@ -39,7 +41,7 @@ public class CityManager : MonoBehaviour
             Destroy(gameObject); // Destroy duplicate instances of the CityManager
             return;
         }
-
+        newDaySound = Resources.Load<AudioClip>("Audio/new_day");
         city = new City();
         city.population = cityPopulation;
         city.maxDaysAmount = maxCityDaysAmount;
@@ -120,6 +122,9 @@ public class CityManager : MonoBehaviour
             Debug.Log("Game is already over. Cannot finish day.");
             return;
         }
+        
+        AudioSource.PlayClipAtPoint(newDaySound, Camera.main.transform.position, 0.15f);
+        
         previousDayActualEnergy = StationManager.Instance.GetEnergy();
         StationManager.Instance.ClearCards();
         previousDayNeededEnergy = 0;
