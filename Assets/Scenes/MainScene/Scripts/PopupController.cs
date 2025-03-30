@@ -18,7 +18,7 @@ public class PopupController : MonoBehaviour
 
     public void ShowPopup(string text)
     {
-        AudioSource.PlayClipAtPoint(click, Camera.main.transform.position);
+        // AudioSource.PlayClipAtPoint(click, Camera.main.transform.position);
         popupPanel.SetActive(true);
         CityManager.Instance.popupOpened = true;
         SetText(text);
