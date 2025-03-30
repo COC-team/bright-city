@@ -33,7 +33,7 @@ public class NewsManager : MonoBehaviour
         }
     }
 
-    public void ShowNews(String baseMessage, List<Event> events, int neededEnergy, int actualEnergy, int previousDayEnergyDifference, LocationType? locationType)
+    public string ShowNews(String baseMessage, List<Event> events, int neededEnergy, int actualEnergy, int previousDayEnergyDifference, LocationType? locationType)
     {
         Debug.Log("Showing news...");
         string newsText = baseMessage + "\n";
@@ -67,7 +67,7 @@ public class NewsManager : MonoBehaviour
         if (targetObject == null)
         {
             Debug.LogError("Popup GameObject not found in the scene.");
-            return;
+            return "";
         }
         if (targetObject != null)
         {
@@ -75,11 +75,31 @@ public class NewsManager : MonoBehaviour
             PopupController component = targetObject.GetComponent<PopupController>();
             component.ShowPopup(newsText);
         }
+
+        return newsText;
     }
 
     public void ShowFirst(string message)
     {
         GameObject targetObject = FindInactiveGameObject("Popup");
+
+        // Check if the GameObject was found
+        if (targetObject == null)
+        {
+            Debug.LogError("Popup GameObject not found in the scene.");
+            return;
+        }
+        if (targetObject != null)
+        {
+            // Get the component from the GameObject
+            PopupController component = targetObject.GetComponent<PopupController>();
+            component.ShowPopup(message);
+        }
+    }
+
+    public void ShowLastMessage(string message)
+    {
+        GameObject targetObject = FindInactiveGameObject("LastMessagePopup");
 
         // Check if the GameObject was found
         if (targetObject == null)
