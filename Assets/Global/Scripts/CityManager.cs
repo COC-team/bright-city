@@ -474,7 +474,7 @@ public class CityManager : MonoBehaviour
     {
         baseMessageByDay = new Dictionary<int, string>();
         baseMessageByDay[1] = "Day 1: You will unlock locations throughout next 14 days.\nREMEMBER: you need to get as close as possible to electricity consuming level or \nPEOPLE WILL DIE\n";
-        baseMessageByDay[2] = "Day 2: Things are getting interesting.";
+        baseMessageByDay[2] = "Day 2: Things are getting interesting.\n \nREMEMBER: you can always open this menu by clicking at the calender icon.\n";
         baseMessageByDay[3] = "Day 3: Keep an eye on the energy levels.";
         baseMessageByDay[4] = "Day 4: The city is evolving, stay vigilant.";
         baseMessageByDay[5] = "Day 5: Challenges arise, plan wisely.";
