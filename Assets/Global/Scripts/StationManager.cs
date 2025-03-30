@@ -77,15 +77,14 @@ public class StationManager  : MonoBehaviour
         cards = new List<CardInfo>();
         cards.Add(CreateCard("15", "Gives 5 power to city", 15));
         cards.Add(CreateCard("20", "Gives 10 power to city", 20));
-        
         cardsPerDay.Add(1, cards);
         cards = new List<CardInfo>();
+        cards.Add(CreateCard("5", "Gives 10 power to city", 5));
         cards.Add(CreateCard("15", "Gives 10 power to city", 15));
         cards.Add(CreateCard("20", "Gives 10 power to city", 20));
         cards.Add(CreateCard("30", "Gives 10 power to city", 30));
         cardsPerDay.Add(2, cards);
         cards = new List<CardInfo>();
-        cards.Add(CreateCard("5", "Gives 10 power to city", 5));
         cards.Add(CreateCard("15", "Gives 10 power to city", 15));
         cards.Add(CreateCard("20", "Gives 10 power to city", 20));
         cards.Add(CreateCard("30", "Gives 10 power to city", 30));
