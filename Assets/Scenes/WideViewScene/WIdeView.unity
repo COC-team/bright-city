@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 1.1
-  darkenAmount: 0
+  darkenAmount: 0.1
   animationSpeed: 10
   isPopupButton: 0
 --- !u!61 &300811341
@@ -3644,8 +3644,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 613566455
-  m_SortingOrder: 100
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1487708375
 GameObject:

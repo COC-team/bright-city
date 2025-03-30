@@ -15,6 +15,11 @@ public class LabelShow : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (CityManager.Instance.popupOpened)
+        {
+            // Если попап открыт, не обновляй эффект
+            return;
+        }
         if (label != null)
         {
             label.gameObject.SetActive(true); // Показать лейбл при наведении
