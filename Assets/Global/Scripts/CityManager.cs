@@ -502,6 +502,10 @@ public class CityManager : MonoBehaviour
         enablingLocationsByDay[8] = LocationType.Factory;
         enablingLocationsByDay[9] = LocationType.Supermarket;
         enablingLocationsByDay[10] = LocationType.Club;
+        enablingLocationsByDay[11] = LocationType.CommonHouse;
+        enablingLocationsByDay[12] = LocationType.CommonHouse;
+        enablingLocationsByDay[13] = LocationType.CommonHouse;
+        enablingLocationsByDay[14] = LocationType.CommonHouse;
     }
     
     private void InitializeBaseMessagesByDay()
