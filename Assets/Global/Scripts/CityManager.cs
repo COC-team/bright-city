@@ -23,6 +23,7 @@ public class CityManager : MonoBehaviour
     private int previousDayEnergyDifference = 0;
     private int previousDayNeededEnergy = 0;
     private int previousDayActualEnergy = 0;
+    private string lastNewsMessage;
     
     private List<Event> usedEvents = new List<Event>(); // List to track used events
 
@@ -57,7 +58,16 @@ public class CityManager : MonoBehaviour
     IEnumerator WaitAndShowFirst()
     {
         yield return new WaitForSeconds(1f);
-        NewsManager.Instance.ShowFirst("DO NOT SKIP!\n\nWelcome new manager!\n\nThis is your first day in the city. You will be responsible for managing the energy supply and ensuring the well-being of the citizens. Good luck! Visit the Power Station and the Town to get started.");
+        lastNewsMessage = "DO NOT SKIP!\n\nWelcome new manager!\n\nThis is your first day in the city. You will be responsible for managing the energy supply and ensuring the well-being of the citizens. Good luck! Visit the Power Station and the Town to get started.";
+        NewsManager.Instance.ShowFirst(lastNewsMessage);
+    }
+    
+    public void DisplayLastNewsMessage()
+    {
+        if (lastNewsMessage != null)
+        {
+            NewsManager.Instance.ShowLastMessage(lastNewsMessage);
+        }
     }
 
     
@@ -164,7 +174,8 @@ public class CityManager : MonoBehaviour
         
         Debug.Log($"Day {city.currentDay}: Events Occurring");
         var events = GenerateRandomEventsForDay();
-        NewsManager.Instance.ShowNews(baseMessage, events, previousDayNeededEnergy, previousDayActualEnergy, previousDayEnergyDifference, unlockedLocation);
+        lastNewsMessage = NewsManager.Instance.ShowNews(baseMessage, events, previousDayNeededEnergy, previousDayActualEnergy, previousDayEnergyDifference, unlockedLocation);
+        
         city.ApplyEvents(events);
 
         LogAllLocations();
