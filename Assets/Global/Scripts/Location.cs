@@ -21,8 +21,9 @@ public class Location : MonoBehaviour
     
     public void ApplyEnergyModifier(int energyModifier)
     {
+        Debug.Log($"Applying energy modifier: {energyModifier} to location: {type}");
         currentDayEnergyAmount += energyModifier;
-        currentDayEnergyAmount = Math.Min(currentDayEnergyAmount, 0);
+        currentDayEnergyAmount = Math.Max(currentDayEnergyAmount, 0);
     }
     
     public void ResetDayEnergy()
