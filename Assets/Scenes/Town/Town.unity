@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 7
   baseEnergyAmount: 25
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 25
   description: "Betting big on pulling the legendary \u201CI\u2019m-not-broke\u201D
     card"
   enabledLocation: 0
@@ -1998,7 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   baseEnergyAmount: 30
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 30
   description: Where you go to accidentally create 5-second viral dance trends
   enabledLocation: 0
 --- !u!1 &589902325
@@ -2745,7 +2745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   baseEnergyAmount: 60
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 60
   description: Where doctors prescribe TikTok dances for quicker recovery
   enabledLocation: 0
 --- !u!114 &720736668
@@ -2944,7 +2944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 8
   baseEnergyAmount: 10
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 10
   description: "Nature\u2019s Wi-Fi-free zone, except for the dog memes"
   enabledLocation: 0
 --- !u!114 &744599010
@@ -4155,7 +4155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   baseEnergyAmount: 80
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 80
   description: Industrial beats dropping harder than your productivity
   enabledLocation: 0
 --- !u!114 &1272133084
@@ -5041,7 +5041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   baseEnergyAmount: 20
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 20
   description: Grocery shopping, but make it a speedrun challenge
   enabledLocation: 0
 --- !u!114 &1554679136
@@ -5751,7 +5751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   baseEnergyAmount: 25
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 25
   description: Where the popcorn costs more than your monthly subscription services
   enabledLocation: 0
 --- !u!1 &1672018936
@@ -6363,7 +6363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 9
   baseEnergyAmount: 20
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 20
   description: IRL Stardew Valley, but with less romance and more cow drama
   enabledLocation: 0
 --- !u!114 &1828884657
@@ -7074,7 +7074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   baseEnergyAmount: 30
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 30
   description: The ultimate collab hub where homework influencers thrive
   enabledLocation: 0
 --- !u!1 &1950901725
@@ -7618,7 +7618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 6
   baseEnergyAmount: 30
-  currentDayEnergyAmount: 0
+  currentDayEnergyAmount: 30
   description: Where degrees come with free existential crises and memes
   enabledLocation: 0
 --- !u!114 &2082932939

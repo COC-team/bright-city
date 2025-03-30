@@ -126,12 +126,16 @@ public class CityManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(newDaySound, Camera.main.transform.position, 0.15f);
         
         previousDayActualEnergy = StationManager.Instance.GetEnergy();
+        Debug.Log("Previous day actual energy: " + previousDayActualEnergy);
         StationManager.Instance.ClearCards();
         previousDayNeededEnergy = 0;
         foreach (var location in city.getEnabledLocations())
         {
+            Debug.Log("Location: " + location.type);
+            Debug.Log("Location energy: " + location.currentDayEnergyAmount);
             previousDayNeededEnergy += location.currentDayEnergyAmount;
         }
+        Debug.Log("Previous day needed energy: " + previousDayNeededEnergy);
         
         previousDayEnergyDifference = previousDayNeededEnergy - previousDayActualEnergy;
         if (previousDayEnergyDifference < 0)
