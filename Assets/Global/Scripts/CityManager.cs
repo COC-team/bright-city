@@ -288,10 +288,15 @@ public class CityManager : MonoBehaviour
         // Select number of events (0 to 3)
         int eventCount;
         int randomValue = UnityEngine.Random.Range(0, 100);
-        if (city.currentDay is 0 or 1 or 2)
+        if (city.currentDay is 0 or 1)
         {
             eventCount = 0;
         }
+        else if (city.currentDay is 2)
+        {
+            eventCount = 1;
+        }
+        
         else if (city.currentDay <= 5 )
         {
             if (randomValue < 20) eventCount = 0;      // 15%
