@@ -288,7 +288,7 @@ public class CityManager : MonoBehaviour
         // Select number of events (0 to 3)
         int eventCount;
         int randomValue = UnityEngine.Random.Range(0, 100);
-        if (city.currentDay == 0 || city.currentDay == 1)
+        if (city.currentDay is 0 or 1 or 2)
         {
             eventCount = 0;
         }
