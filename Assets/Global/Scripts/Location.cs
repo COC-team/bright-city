@@ -12,7 +12,7 @@ public class Location : MonoBehaviour
     public string description;
     [FormerlySerializedAs("enabled")] public bool enabledLocation = false;
     
-    public Location(LocationType type, int baseEnergyAmount = 0)
+    public Location(LocationType type, int baseEnergyAmount)
     {
         this.type = type;
         this.baseEnergyAmount = baseEnergyAmount;
